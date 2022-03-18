@@ -1,0 +1,71 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  background: #e6e6e6;
+  font-family: Soho Gothic W01 Regular, Soho Gothic W02 Regular, Verdana, Arial,
+    sans-serif;
+  font-size: 10pt;
+}
+
+header,
+.main,
+footer {
+  width: 90%;
+  max-width: 1010px;
+  margin: 20px auto;
+  /* borrar todo esto */
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+header nav {
+  margin: 10px 0px;
+  background: #ff7900;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  float: left;
+}
+
+header nav ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+header nav ul li:hover {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  background: #c75d00;
+  border-radius: 10px;
+}
+
+.direccion {
+  font-size: small;
+  padding: 0px 10px;
+  color: rgb(129, 129, 129);
+}
+
+footer {
+  font-size: x-small;
+}
+
+.wrap {
+  margin: 10px;
+}
+
+.wrap > div {
+  margin: 0px 0px;
+  padding: 5px 0px;
+}

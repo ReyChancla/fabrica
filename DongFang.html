@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculo de Producto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <span id="cabecera"></span>
+    </header>
+    <div class="main">
+        <h1>Dong Fang</h1>
+        <div class="wrap">
+                <div>
+                    <h2>Medidas de plancha unitaria</h2><br>
+                    <input type="number" id="AnchoDF" placeholder="Ancho"><b> x </b>
+                    <input type="number" id="LargoDF" placeholder="Largo"><br><br>
+                    <h3>Repeticiones:</h3>
+                    <input type="number" id="copiasAnchoDF" value="1"><b> x </b>
+                    <input type="number" id="copiasLargoDF" value="1"><br>
+                </div>
+                <div>
+                    <H2>Opciones de cualculo:</H2>
+                    <select id="CanalDF">
+                        <option value="1">E</option>
+                        <option value="1">B</option>
+                        <option value="1">C</option>
+                        <option value="2">BC</option>
+                        <option value="2">EB</option>
+                    </select>
+                </div>
+                <div>
+                    <span id="ResultadosDF"></span>
+                </div>
+                <input type="button" value="Calcular y valorar" onclick="CalcularDF()">
+
+        </div>
+   </div>
+
+    <footer>
+        <span id="footer"></span>
+    </footer>
+
+    <script src="header.js"></script>
+    <script src="SrcriptDF.js"></script>
+</body>
+</html>
