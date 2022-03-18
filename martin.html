@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculo de Producto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <span id="cabecera"></span>
+    </header>
+
+    <div class="main">
+        <h1>Martin</h1>
+        <div class="wrap">
+            <h2>Medias de caja:</h2><br>
+            <input type="button"  onclick="calcularEntreHendidos()" value="Medidas entre hendidos" >
+            <span id="optionEntreHendidos"></span>
+            <br>
+            <h2>Medias internas</h2>
+            <div>
+                <input type="number" id="largoMartin" placeholder="largo"><b> x </b>
+                <input type="number" id="anchoMartin" placeholder="ancho"><b> x </b>
+                <input type="number" id="altoMartin" placeholder="alto">
+            </div>
+            <br><br>
+            <h2>Opciones de plancha:</h2>
+            <div>
+                <select id="canalesMartin2">
+                    <option value="canalB">Canal B</option>
+                    <option value="canalC">Canal C</option>
+                    <option value="canalEB">Canal EB</option>
+                    <option value="canalBC">Canal BC</option>
+                </select>
+                <input type="checkbox" name="trimMasa" id="trimMasa">
+                <label for="trimMasa">Con masa o indiana.</label>
+                <input type="checkbox" name="tirasArrastre" id="tirasArrastre">
+                <label for="tirasArrastre">Tiras de arrastre</label>
+            </div>
+            <br>
+            <div>
+                <h2>Modelo de caja:</h2>
+                <form>
+                    <input type="radio" name="typebox" value="m200" id="m200">
+                    <label for="m200">Modelo B0</label>
+                    <input type="radio" name="typebox" value="m201" id="m201">
+                    <label for="m201">Modelo B1</label>
+                    <input type="radio" name="typebox" value="m203" id="m203">
+                    <label for="m203">Modelo B3</label>
+                </form>
+            </div>
+            <br>
+            <div>
+                <h2>Opciones de impresión:</h2>
+                <label for="numerodetintas">Numero de tintas:</label>
+                <input type="number" name="numerodetintas" id="numerodetintas" value="1">
+                <!-- <select id="Proveedor">
+                    <option value="Euroflexo">Euroflexo</option>
+                    <option value="Diflex">Diflex</option>
+                    <option value="Globalflexo">Globalflexo</option>
+                </select> -->
+                <select id="TipoDeIMpresión">
+                    <option value="1">Liquido 4.32</option>
+                    <option value="2">Liquido 6.00</option>
+                    <option value="3">Solido 6.00</option>
+                    <option value="4">Solido 4.23</option>
+                    <option value="5">Foam</option>
+                    <option value="6">Solido HD</option>
+                </select>
+            </div>
+            <br>
+            <input type="button" value="Calcular y valorar" onclick="CalcularDatosMartin()">
+            <br>
+            <div id="aparecer" class="desaparecer">
+                <h2>Datos para Docupoint</h2>
+                <article>
+                    <span id="OpcionCurinioni"></span>
+                    <span id="errorMedidas"></span><br>
+                    <b>fecha:</b><span id="elemento1"></span><br>
+                    <b>medidas internas:</b><span id="elemento2"></span><br>
+                    <b>total de placha:</b><span id="elemento3"></span><br>
+                    <b>ruta:</b><span id="elemento4"></span><br>
+                    <b>coste de cliché:</b><span id="elemento5"></span><br>
+                    <b>numero de tintas:</b><span id="elemento6"></span><br>
+                    
+                    <!-- <b>% de impresión:</b><span id="elemento7"></span><br>
+                    <b>coste de Troquel:</b><span id="elemento8"></span><br> -->
+                </article>
+        </div>
+    </div>
+
+    <footer>
+        <span id="footer"></span>
+    </footer>
+
+    <script src="header.js"></script>
+    <script src="ScriptMartin.js"></script>
+</body>
+</html>
