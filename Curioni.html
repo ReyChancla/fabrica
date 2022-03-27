@@ -9,14 +9,64 @@
     <header>
         <span id="cabecera"></span>
     </header>
+    <div class="main">
+        <h1>Curioni</h1>
+        <div class="wrap">
+                <div>
+                    <h2>Opciones de fabricación:</h2><br>
+                    <input type="button" value="Plancha Impresa" onclick="planchaImpresa()">
+                    <input type="button" value="B1 Pegada(ancho)" onclick="b1Pegada1()">
+                    <input type="button" value="B1 Pegada (largo)" onclick="b1Pegada2()">
+                    <input type="button" value="Media Caja" onclick="mediaCaja()">
+                    <input type="button" value="Caja Telescopia" onclick="cajaTelescopica()">
+                    <input type="button" value="FEFCO 409" onclick="Fefco409()">
+                </div>
+                <div id="optionBox"></div>
+                <div>
+                    <H2>Opciones de cualculo:</H2>
+                    <select id="CanalDF">
+                        <option value="E">E</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="BC">BC</option>
+                        <option value="EB">EB</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Opciones de impresión:</h2>
+                    <label for="numerodetintas">Numero de tintas:</label>
+                    <input type="number" name="numerodetintas" id="numerodetintas" value="1">
+                    <!-- <select id="Proveedor">
+                        <option value="Euroflexo">Euroflexo</option>
+                        <option value="Diflex">Diflex</option>
+                        <option value="Globalflexo">Globalflexo</option>
+                    </select> -->
+                    <select id="TipoDeIMpresión">
+                        <option value="4">Solido 4.23</option>
+                        <option value="1">Liquido 4.32</option>
+                        <option value="2">Liquido 6.00</option>
+                        <option value="3">Solido 6.00</option>
+                        <option value="4">Solido 4.23</option>
+                        <option value="5">Foam</option>
+<!--                         <option value="6">Solido HD</option>
+ -->                    </select>
+                </div>
+                <!-- ////////////////////// -->
 
-   
+                <div>
+                    <span id="ResultadosDF"></span>
+                </div>
+
+                <input type="button" value="Calcular y valorar" onclick="CalcularDF()">
+
+        </div>
+   </div>
 
     <footer>
         <span id="footer"></span>
     </footer>
 
     <script src="header.js"></script>
-    <script src="Script.js"></script>
+    <script src="SrcriptCuri.js"></script>
 </body>
 </html>

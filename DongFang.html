@@ -31,8 +31,30 @@
                     </select>
                 </div>
                 <div>
+                    <h2>Opciones de impresión:</h2>
+                    <label for="numerodetintas">Numero de tintas:</label>
+                    <input type="number" name="numerodetintas" id="numerodetintas" value="1">
+                    <!-- <select id="Proveedor">
+                        <option value="Euroflexo">Euroflexo</option>
+                        <option value="Diflex">Diflex</option>
+                        <option value="Globalflexo">Globalflexo</option>
+                    </select> -->
+                    <select id="TipoDeIMpresión">
+                        <option value="4">Solido 4.23</option>
+                        <option value="1">Liquido 4.32</option>
+                        <option value="2">Liquido 6.00</option>
+                        <option value="3">Solido 6.00</option>
+                        <option value="4">Solido 4.23</option>
+                        <option value="5">Foam</option>
+<!--                         <option value="6">Solido HD</option>
+ -->                    </select>
+                </div>
+                <!-- ////////////////////// -->
+
+                <div>
                     <span id="ResultadosDF"></span>
                 </div>
+
                 <input type="button" value="Calcular y valorar" onclick="CalcularDF()">
 
         </div>

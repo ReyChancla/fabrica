@@ -34,6 +34,7 @@ const medidasBobinaDF = [
 ];
 
 function CalcularDF () {
+  
     const anchoDF = Number(document.getElementById("AnchoDF").value);
     const largoDF = Number(document.getElementById("LargoDF").value);
     const copiasAnchoDF = Number(document.getElementById("copiasAnchoDF").value);
@@ -67,8 +68,9 @@ function CalcularDF () {
     };
 
     document.getElementById("ResultadosDF").innerHTML =
+    '<h2>Datos para Docupoint</h2>' + '<br>' + 
     "Medidas de plancha: " + ApDF + " x " + LpDF + '<br>' +
-    "Tamaño de la bobina: " + nombre + '<br>' ;
+    "Tamaño de la bobina: " + nombre + '<br><br>'   ;
 ///////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
     console.log(CanalesDF);

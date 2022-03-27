@@ -55,7 +55,7 @@ const DatosCanalesMartin = [
         c2: 5,
         s: 30,
       },
-      resta: 0,
+      resta: 3,
     },
     {
       nombre: "canalC",
@@ -64,7 +64,7 @@ const DatosCanalesMartin = [
         c2: 7,
         s: 30,
       },
-      resta: 0,
+      resta: 4,
     },
     {
       nombre: "canalEB",
@@ -73,7 +73,7 @@ const DatosCanalesMartin = [
         c2: 10,
         s: 40,
       },
-      resta: -2,
+      resta: 4,
     },
     {
       nombre: "canalBC",
@@ -82,7 +82,7 @@ const DatosCanalesMartin = [
         c2: 14,
         s: 40,
       },
-      resta: -4,
+      resta: 5,
     },
   ];
   
@@ -202,7 +202,7 @@ function datosMartin() {
 }
 // Esta es la función primaria que elige el tipo de caja
 
-function CalcularDatosMartin() {
+/* function CalcularDatosMartin() {
   const { m200, m201, m203 } = datosMartin();
 
   if (m200) {
@@ -214,7 +214,7 @@ function CalcularDatosMartin() {
   } else {
     CalcularDatosMartin201();
   }
-}
+} */
 //Esta función es solo para dar la ficha
 function fecha() {
   let hoy = new Date();
@@ -230,7 +230,7 @@ function fecha() {
 //Esta parte contiene la interación del boton, segun el tipo de caja
 //Parte 1 B1
 
-function CalcularDatosMartin201() {
+function CalcularDatosMartin() {
   const {
     trim,
     tiras,
@@ -263,10 +263,28 @@ function CalcularDatosMartin201() {
   const pestaña = s;
   const L = (Tancho + Tlargo) * 2 + pestaña;
   const H = (Tancho + Tlargo) * 2;
-  const I = Talto + Tancho + c1 + resta;
+  const solapa = Math.trunc(ancho/2) + resta;
+  ////////////////////////////////////////////////////////////
+  const { m200, m201, m203 } = datosMartin();
+  let solapa2;
+  if (m200) {
+    solapa2 = solapa - c2;
+  } else if (m201) {
+    solapa2 = solapa * 2;
+  } else if (m203) {
+    solapa2 = ancho * 2;
+  } else {
+    solapa2 = solapa * 2;
+  }
+  ////////////////////////////////////////////////////////////
+  const I = Talto + (solapa2);
   const B1Cerrada = Tlargo + Tancho;
   const E = ancho / 2;
   const F = Talto;
+  console.log(solapa);
+
+
+
 /////////
 console.log(resta);
 let extrax;
@@ -280,6 +298,11 @@ if (trim === true && tiras === false){
 else if (trim === true && tiras === true) {
   extrax = L+15;
 }
+
+////////////////////////////////////////////////////////////////////////
+document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2><article id="TextToCopy"><span id="OpcionCurinioni"></span><span id="errorMedidas"></span><br><b>fecha:</b><span id="elemento1"></span><br><b>medidas internas:</b><span id="elemento2"></span><br><b>total de placha:</b><span id="elemento3"></span><br><b>ruta:</b><span id="elemento4"></span><br><b>coste de cliché:</b><span id="elemento5"></span><br><b>numero de tintas:</b><span id="elemento6"></span><br></br>'/* <input type="button" value="Copiar texto" onclick="CopiarDatos(TextToCopy)"</article><br></br> */;
+
+///////////////////////////////////////////////////////////////////////
 
 //////////
   if (extrax >= 800 && extrax <= 2400) {
@@ -370,11 +393,13 @@ else if (trim === true && tiras === true) {
   // document.getElementById("elemento8").innerHTML = ("  ") + Tancho + (" x ") + Tlargo + (" x ") + Talto;
 }
 
-function CalcularDatosMartin200() {
-  alert("El atractivo programador necesita más tiempo");
-}
-
-function CalcularDatosMartin203() {
-  alert("Conformate ahora mismo con hacer B1");
-}
+/* function CopiarDatos(id_elemento) {
+  let Aux= document.createElement("input");
+  Aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+  document.body.appendChild(Aux);
+  Aux.select();
+  document.execCommand("copy");
+  document.body.removeChild(Aux);
+ 
+}; */
 
