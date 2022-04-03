@@ -12,16 +12,22 @@
     <div class="main">
         <h1>Curioni</h1>
         <div class="wrap">
-                <div>
-                    <h2>Opciones de fabricación:</h2><br>
-                    <input type="button" value="Plancha Impresa" onclick="planchaImpresa()">
-                    <input type="button" value="B1 Pegada(ancho)" onclick="b1Pegada1()">
-                    <input type="button" value="B1 Pegada (largo)" onclick="b1Pegada2()">
-                    <input type="button" value="Media Caja" onclick="mediaCaja()">
-                    <input type="button" value="Caja Telescopia" onclick="cajaTelescopica()">
-                    <input type="button" value="FEFCO 409" onclick="Fefco409()">
+
+                <div id="optionBox1">
+                    <H2>Medidas de plancha:</H2><br>
+                    <input type="number" id="anchoPlanchaCuri" placeholder="Ancho de plancha"><b> x </b>
+                    <input type="number" id="largoPlanchaCuri" placeholder="Largo de plancha">
                 </div>
-                <div id="optionBox"></div>
+                
+
+                <div id="optionBox2">
+                    <H2>Medidas interiores:</H2>
+                <br>
+                <input type="number" id="largoCuri" placeholder="Largo"><b> x </b>
+                <input type="number" id="anchoCuri" placeholder="Ancho"><b> x </b>
+                <input type="number" id="altoCuri" placeholder="Alto">
+                </div>
+                <br>
                 <div>
                     <H2>Opciones de cualculo:</H2>
                     <select id="CanalDF">
@@ -35,19 +41,18 @@
                 <div>
                     <h2>Opciones de impresión:</h2>
                     <label for="numerodetintas">Numero de tintas:</label>
-                    <input type="number" name="numerodetintas" id="numerodetintas" value="1">
+                    <input type="number" name="numerodetintas" id="numerodetintas" value="1" min="0" max="3">
                     <!-- <select id="Proveedor">
                         <option value="Euroflexo">Euroflexo</option>
                         <option value="Diflex">Diflex</option>
                         <option value="Globalflexo">Globalflexo</option>
                     </select> -->
-                    <select id="TipoDeIMpresión">
-                        <option value="4">Solido 4.23</option>
-                        <option value="1">Liquido 4.32</option>
-                        <option value="2">Liquido 6.00</option>
-                        <option value="3">Solido 6.00</option>
-                        <option value="4">Solido 4.23</option>
-                        <option value="5">Foam</option>
+                    <select id="TipoDeIMpresion">
+                        <option value="0.0115">Liquido 6.00</option>
+                        <option value="0.0195">Solido 6.00</option>
+                        <option value="0.0156">Liquido 4.32</option>
+                        <option value="0.018">Solido 4.23</option>
+                        <option value="0.024">Foam</option>
 <!--                         <option value="6">Solido HD</option>
  -->                    </select>
                 </div>
@@ -57,7 +62,16 @@
                     <span id="ResultadosDF"></span>
                 </div>
 
-                <input type="button" value="Calcular y valorar" onclick="CalcularDF()">
+                <div>
+                    <h2>Opciones de fabricación y datos:</h2><br>
+                    <input type="button" value="Plancha Impresa" onclick="planchaImpresa()">
+                    <input type="button" value="B1 Pegada(ancho)" onclick="b1Pegada1()">
+                    <input type="button" value="B1 Pegada (largo)" onclick="b1Pegada2()">
+                    <input type="button" value="Media Caja" onclick="mediaCaja()">
+                    <input type="button" value="Caja Telescopia" onclick="cajaTelescopica()">
+                    <input type="button" value="FEFCO 409" onclick="Fefco409()">
+                </div>
+                <div id="optionDatos"></div>
 
         </div>
    </div>

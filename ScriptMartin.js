@@ -223,7 +223,7 @@ function fecha() {
   let mes = hoy.getMonth() + 1;
   let agnio = hoy.getFullYear();
 
-  let formatofecha = `${dia}-${mes}-${agnio}`;
+  let formatofecha = `${dia}/${mes}/${agnio}`;
   return { formatofecha };
 }
 
@@ -300,7 +300,16 @@ else if (trim === true && tiras === true) {
 }
 
 ////////////////////////////////////////////////////////////////////////
-document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2><article id="TextToCopy"><span id="OpcionCurinioni"></span><span id="errorMedidas"></span><br><b>fecha:</b><span id="elemento1"></span><br><b>medidas internas:</b><span id="elemento2"></span><br><b>total de placha:</b><span id="elemento3"></span><br><b>ruta:</b><span id="elemento4"></span><br><b>coste de cliché:</b><span id="elemento5"></span><br><b>numero de tintas:</b><span id="elemento6"></span><br></br>'/* <input type="button" value="Copiar texto" onclick="CopiarDatos(TextToCopy)"</article><br></br> */;
+document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2>'+
+'<article id="TextToCopy"><span id="OpcionCurinioni"></span>'+
+'<span id="errorMedidas"></span><br>'+
+'<b>fecha:</b><span id="elemento1"></span><br>'+
+'<b>medidas internas:</b><span id="elemento2"></span><br>'+
+'<b>total de placha:</b><span id="elemento3"></span><br>'+
+'<b>ruta:</b><span id="elemento4"></span><br>'+
+'<b>coste de cliché:</b><span id="elemento5"></span><br>'+
+'<b>numero de tintas:</b><span id="elemento6"></span><br></br></article>';
+/* <input type="button" value="Copiar texto" onclick="CopiarDatos(TextToCopy)"</article><br></br> */;
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -382,7 +391,7 @@ document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2><a
   // Total de Plancha
   document.getElementById("elemento3").innerHTML = "  " + I + " x " + extrax;
   //Ruta
-  document.getElementById("elemento4").innerHTML = "  Ond / Martin";
+  document.getElementById("elemento4").innerHTML = "  Ond / Martin (UP21)";
   //Coste del cliche
   document.getElementById("elemento5").innerHTML =
     "  " +
