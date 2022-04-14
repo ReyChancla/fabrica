@@ -79,4 +79,6 @@ footer {
 #error8,
 #error9,
 #error10,
-#error11{background-color: rgb(255, 96, 96);}
+#error11{background-color: rgb(243, 0, 0);
+color: #fff;
+font-weight: bold;}
