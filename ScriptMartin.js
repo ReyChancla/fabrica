@@ -281,7 +281,7 @@ function CalcularDatosMartin() {
   const B1Cerrada = Tlargo + Tancho;
   const E = ancho / 2;
   const F = Talto;
-  console.log(solapa);
+  console.log(F);
 
 
 
@@ -308,77 +308,72 @@ document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2>'+
 '<b>total de placha:</b><span id="elemento3"></span><br>'+
 '<b>ruta:</b><span id="elemento4"></span><br>'+
 '<b>coste de cliché:</b><span id="elemento5"></span><br>'+
-'<b>numero de tintas:</b><span id="elemento6"></span><br></br></article>';
+'<b>numero de tintas:</b><span id="elemento6"></span><br></article>' +  
+'<span id="error1"></span>' +
+'<span id="error2"></span>' +
+'<span id="error3"></span>' +
+'<span id="error4"></span>' +
+'<span id="error5"></span>' +
+'<span id="error6"></span>' +
+'<span id="error7"></span>' +
+'<span id="error8"></span>' +
+'<span id="error9"></span>' +
+'<span id="error10"></span>' +
+'<span id="error11"></span>';
 /* <input type="button" value="Copiar texto" onclick="CopiarDatos(TextToCopy)"</article><br></br> */;
 
 ///////////////////////////////////////////////////////////////////////
 
 //////////
-  if (extrax >= 800 && extrax <= 2400) {
-  } else {
-    console.log("valor L incorrecto");
-    document.getElementById("errorMedidas").innerHTML =
-      "Esta caja no se puede fabricar, por medidas.";
-    document.getElementById("errorMedidas").style.background = "red";
+  if (extrax <= 750) {
+    document.getElementById("error1").innerHTML = "El largo de plancha es inferior al mínimo de 750mm" + '<br>';
+  } else if (extrax >= 2400) {
+    document.getElementById("error1").innerHTML = "El largo de la plancha es superior al máximo de 2400mm" + '<br>';
   }
   ///////////////////////////////////////////////////////////////
-  if (H >= 775 && H <= 2200) {
-  } else {
-    console.log("valor H incorrecto");
-    document.getElementById("errorMedidas").innerHTML =
-      "Esta caja no se puede fabricar, por medidas.";
-    document.getElementById("errorMedidas").style.background = "red";
+  if (H <= 720) {
+    document.getElementById("error2").innerHTML = "La suma de los paneles es inferior al mínimo de 720mm" + '<br>';
+  } else if (H >= 2200) {
+    document.getElementById("error2").innerHTML = "La suma de los paneles es superior al máximo de 2200mm" + '<br>';
   }
   //////////////////////////////////////////////////////
-  if (I >= 300 && I <= 900) {
-  } else if (I >= 901 && I <= 1000) {
-    document.getElementById("OpcionCurinioni").innerHTML =
-      '<p><strong>Notas:</strong>  **Esta caja puede ser fabricada por Martin, pero con Sky Feed,<br>se recomienda fabricar en Curioni"**</p>';
-  } else {
-    console.log("valor I incorrecto");
-    document.getElementById("errorMedidas").innerHTML =
-      "Esta caja no se puede fabricar, por medidas.";
-    document.getElementById("errorMedidas").style.background = "red";
+  if (I <= 300) {
+    document.getElementById("error3").innerHTML = "El ancho de plancha es inferior al mínimo de 300mm" + '<br>';
+  } else if (I >= 900) {
+    document.getElementById("error3").innerHTML = "El ancho de plancha es superior a 900mm." + '<br>' +
+    "Se recomienda cambiar a Curioni, sino usar Sky Feed" +'<br>' ;
+  } else if (I >= 1000) {
+    document.getElementById("error3").innerHTML = "El ancho de plancha es superior al máximo de 1000mm" + '<br>';
   }
   //////////////////////////////////////////////////////
-  if (Tancho >= 120 && Tancho <= 950) {
-  } else {
-    console.log("valor ancho incorrecto");
-    document.getElementById("errorMedidas").innerHTML =
-      "Esta caja no se puede fabricar, por medidas.";
-    document.getElementById("errorMedidas").style.background = "red";
+  if (Tancho <= 120) {
+    document.getElementById("error4").innerHTML = "El ancho de la caja es inferior al mínimo de 120mm" + '<br>';
+  } else if (Tancho >= 950) {
+    document.getElementById("error4").innerHTML = "El ancho de la caja es superior al máximo de 950mm" + '<br>';
   }
   /////////////////////////////////////////////////////////
-  if (Tlargo >= 250 && Tlargo <= 1080) {
-  } else {
-    console.log("valor largo incorrecto");
-    document.getElementById("errorMedidas").innerHTML =
-      "Esta caja no se puede fabricar, por medidas.";
-    document.getElementById("errorMedidas").style.background = "red";
+  if (Tlargo <= 120) {
+    document.getElementById("error5").innerHTML = "El largo de la caja es inferior al mínimo de 120mm" + '<br>';
+  } else if (Tlargo >= 1080) {
+    document.getElementById("error5").innerHTML = "El largo de la caja es superior al máximo de 1080mm" + '<br>';
   }
   /////////////////////////////////////////////////////////////
-  if (B1Cerrada >= 400 && B1Cerrada <= 1100) {
-  } else {
-    console.log("valor caja cerrada incorrecto");
-    document.getElementById("errorMedidas").innerHTML =
-      "Esta caja no se puede fabricar, por medidas.";
-    document.getElementById("errorMedidas").style.background = "red";
+  if (B1Cerrada <= 360) {
+    document.getElementById("error6").innerHTML = "La caja plegada es inferior al mínimo de 360mm" + '<br>';
+  } else if (B1Cerrada >= 1100) {
+    document.getElementById("error6").innerHTML = "La caja plegada es superior al máximo de 1100mm" + '<br>';
   }
   ///////////////////////////////////////////////////////////////
-  if (E >= 0 && E <= 300) {
-  } else {
-    console.log("valor E incorrecto");
-    document.getElementById("errorMedidas").innerHTML =
-      "Esta caja no se puede fabricar, por medidas.";
-    document.getElementById("errorMedidas").style.background = "red";
+  if (E >= 300) {
+    document.getElementById("error7").innerHTML = "La solapa es superior al máximo de 300mm de rendija" + '<br>';
   }
   ////////////////////////////////////////////////////////////////////
-  if (F >= 100 && F <= 800) {
-  } else {
-    console.log("valor F incorrecto");
-    document.getElementById("errorMedidas").innerHTML =
-      "Esta caja no se puede fabricar, por medidas.";
-    document.getElementById("errorMedidas").style.background = "red";
+  if (F <= 100) {
+    document.getElementById("error8").innerHTML = "El alto de la caja es inferior al minimo de 100mm" + '<br>';
+  } else if (F > 100 && F <= 450 ) {
+    document.getElementById("error8").innerHTML = "La impresión de la caja ha de llevar tiras de arrastre" + '<br>';
+  }else if (F >= 800) {
+    document.getElementById("error8").innerHTML = "El alto de la caja es superior al máximo de 800mm " + '<br>';
   }
 
   //Alerta de error
