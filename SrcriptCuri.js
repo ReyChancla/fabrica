@@ -352,6 +352,7 @@ const pestaña = s;
 const solapa = Math.trunc(Ancho/2) + resta;
 const anchoPlanchaCuri = AltoT + (solapa * 2);
 const largoPlanchaCuri = (LargoT + AnchoT) + s;
+console.log(anchoPlanchaCuri);
   
 
 
@@ -363,7 +364,7 @@ const largoPlanchaCuri = (LargoT + AnchoT) + s;
   "Fecha: " + formatofecha + '<br>' + 
   "Mididas de plancha: " + anchoPlanchaCuri + " x " + largoPlanchaCuri + '<br>' + 
   "Ruta: " + "Onduladora/ Curioni(UP22)" + '<span id="dobleRuta1"></span>' +
-  '<span id="dobleRuta2"></span>' + '<span id="dobleRuta3"></span>' + '<br>' + 
+  '<span id="dobleRuta2"></span>' + '<span id="dobleRuta3"></span>' + "/Pegadora" + '<br>' + 
   "Nº de tintas: " + NTintas + '<br>' + 
   "Coste de cliches: " + ((((anchoPlanchaCuri * largoPlanchaCuri)*NTintas)/100) * (Coste + Premontaje)).toFixed(2) +'<br>' + 
   '<span id="error1"></span>'+
@@ -393,7 +394,7 @@ const largoPlanchaCuri = (LargoT + AnchoT) + s;
     document.getElementById("error3").innerHTML = " Si tiene asas en el ancho, dar dos pasadas " + '<br>';
     document.getElementById("dobleRuta1").innerHTML = " / Curioni(UP21)";
   }
-  if (310 < anchoPlanchaCuri < 350) {
+  if (310 < anchoPlanchaCuri && anchoPlanchaCuri< 350) {
     document.getElementById("error4").innerHTML = " Esta caja ha de ser anonima, sin impresión" + '<br>';
   }
   if (anchoPlanchaCuri > 1300) {
@@ -415,7 +416,60 @@ const largoPlanchaCuri = (LargoT + AnchoT) + s;
 }
 
 function cajaTelescopica() {
-document.getElementById("optionDatos").innerHTML = '<div id=error1>Hay que esperar a que termine esta parte</div>'
+  
+  const{Ancho, Largo, Alto, NTintas, Coste, Premontaje, canal} = DatosCurioni();
+  const {formatofecha} = fecha();
+  const {c1,c2,s, resta} = datosCurioniHendidos();
+  /*------------------------------------
+  Datos de construccion
+  ------------------------------------*/
+
+  const anchoTele = Ancho + c2 - parseInt(c1 / 2);
+  const largoTele = Largo + c1;
+  const altoTele = Alto + parseInt(c1 / 2);
+
+  const anchoTeleTotal = anchoTele + (altoTele)*2;
+  const largoTeleTotal = largoTele + (altoTele)*2;
+  
+
+
+  /*------------------------------------
+  Pruebas 
+  ------------------------------------*/
+
+  console.log(anchoTele);
+  console.log(largoTele);
+  console.log(altoTele);
+
+  /*------------------------------------
+  Datos de fabricación
+  ------------------------------------*/
+  
+  document.getElementById("optionDatos").innerHTML =
+  '<h2>Datos para Curioni, Media Caja</h2><br>' + 
+  "Fecha: " + formatofecha + '<br>' + 
+  "Mididas de plancha: " + anchoTeleTotal + " x " + largoTeleTotal + '<br>' + 
+  "Ruta: " + "Onduladora/ Curioni(UP22)" + '<span id="dobleRuta1"></span>' +
+  '<span id="dobleRuta2"></span>' + '<span id="dobleRuta3"></span>' + '<br>' + 
+  "Nº de tintas: " + NTintas + '<br>' + 
+  "Coste de cliches: " + ((((anchoTeleTotal * largoTeleTotal)*NTintas)/100) * (Coste + Premontaje)).toFixed(2) +'<br>' + 
+  '<span id="error1"></span>'+
+  '<span id="error2"></span>'+
+  '<span id="error3"></span>'+
+  '<span id="error4"></span>'+
+  '<span id="error5"></span>'+
+  '<span id="error6"></span>'+
+  '<span id="error7"></span>'+
+  '<span id="error8"></span>'+
+  '<span id="error9"></span>'+
+  '<span id="error10"></span>'+
+  '<span id="error11"></span>';
+
+  /*------------------------------------
+  Respuestas
+  ------------------------------------*/
+
+  document.getElementById("error11").innerHTML = "Hay que esperar a que termine esta parte";
 }
 
 function Fefco409() {
