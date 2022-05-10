@@ -303,12 +303,12 @@ else if (trim === true && tiras === true) {
 document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2>'+
 '<article id="TextToCopy"><span id="OpcionCurinioni"></span>'+
 '<span id="errorMedidas"></span><br>'+
-'<b>fecha:</b><span id="elemento1"></span><br>'+
-'<b>medidas internas:</b><span id="elemento2"></span><br>'+
-'<b>total de placha:</b><span id="elemento3"></span><br>'+
-'<b>ruta:</b><span id="elemento4"></span><br>'+
-'<b>coste de cliché:</b><span id="elemento5"></span><br>'+
-'<b>numero de tintas:</b><span id="elemento6"></span><br></article>' +  
+'<b>Fecha:</b><span id="elemento1"></span><br>'+
+'<b>Medidas internas:</b><span id="elemento2"></span><br>'+
+'<b>Total de placha:</b><span id="elemento3"></span><br>'+
+'<b>Ruta:</b><span id="elemento4"></span><br>'+
+'<b>Coste de cliché:</b><span id="elemento5"></span><br>'+
+'<b>Número de tintas:</b><span id="elemento6"></span><br></article>' +  
 '<span id="error1"></span>' +
 '<span id="error2"></span>' +
 '<span id="error3"></span>' +
@@ -395,6 +395,7 @@ document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2>'+
   document.getElementById("elemento6").innerHTML = "  " + NumeroCliches;
   // document.getElementById("elemento7").innerHTML = ("  ") + Tancho + (" x ") + Tlargo + (" x ") + Talto;
   // document.getElementById("elemento8").innerHTML = ("  ") + Tancho + (" x ") + Tlargo + (" x ") + Talto;
+
 }
 
 /* function CopiarDatos(id_elemento) {
@@ -404,6 +405,5 @@ document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2>'+
   Aux.select();
   document.execCommand("copy");
   document.body.removeChild(Aux);
- 
 }; */
 
