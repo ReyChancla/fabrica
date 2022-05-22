@@ -44,6 +44,7 @@ function fecha() {
   return { formatofecha };
 }
 
+
 function CalcularDF () {
   
     const anchoDF = Number(document.getElementById("AnchoDF").value);
@@ -125,7 +126,43 @@ if (datoBobina > minBobina && datoBobina < industrial) {
     console.log(acopleBobina);
 /*     document.getElementById("ResultadosDF").innerHTML =  nombre;
  */ 
-
-
-
+let bandaX = 1
+if (bandaX >= 8) {
+  bandaX = 1
+}
+document.getElementById("bobina1").innerHTML = 
+'<td>1900</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>';
+console.log(bandaX);
+if (bandaX >= 8) {
+  bandaX = 1
+}
+document.getElementById("bobina2").innerHTML = 
+'<td>1900</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
+'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>';
+console.log(bandaX);
+if (bandaX >= 8) {
+  bandaX = 1
+}
+document.getElementById("bobina3").innerHTML = 
+'<td>1900</td>'+
+'<td>' + (( (ApDF * bandaX++))) + '</td>'+
+'<td>' + (( (ApDF * bandaX++))) + '</td>'+
+'<td>' + (( (ApDF * bandaX++))) + '</td>'+
+'<td>' + (( (ApDF * bandaX++))) + '</td>'+
+'<td>' + (( (ApDF * bandaX++))) + '</td>'+
+'<td>' + (( (ApDF * bandaX++))) + '</td>'+
+'<td>' + (( (ApDF * bandaX++))) + '</td>';
 }

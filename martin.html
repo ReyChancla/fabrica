@@ -13,29 +13,31 @@
     <div class="main">
         <h1>Martin</h1>
         <div class="wrap">
-            <h2>Medias de caja:</h2><br>
-            <input type="button"  onclick="calcularEntreHendidos()" value="Medidas entre hendidos" >
-            <span id="optionEntreHendidos"></span>
+            <h2>Tipo de canal</h2><br>
+            <select id="canalesMartin2">
+                <option value="canalB">Canal B</option>
+                <option value="canalC">Canal C</option>
+                <option value="canalEB">Canal EB</option>
+                <option value="canalBC">Canal BC</option>
+            </select>
             <br>
-            <h2>Medias internas</h2>
+            <br>
+            <h2>Medias de la caja</h2>
             <div>
                 <input type="number" id="largoMartin" placeholder="largo"><b> x </b>
                 <input type="number" id="anchoMartin" placeholder="ancho"><b> x </b>
                 <input type="number" id="altoMartin" placeholder="alto">
             </div>
-            <br><br>
-            <h2>Opciones de plancha:</h2>
             <div>
-                <select id="canalesMartin2">
-                    <option value="canalB">Canal B</option>
-                    <option value="canalC">Canal C</option>
-                    <option value="canalEB">Canal EB</option>
-                    <option value="canalBC">Canal BC</option>
-                </select>
-                <input type="checkbox" name="trimMasa" id="trimMasa">
-                <label for="trimMasa">Con masa o indiana.</label>
-                <input type="checkbox" name="tirasArrastre" id="tirasArrastre">
-                <label for="tirasArrastre">Tiras de arrastre</label>
+                <h4>Tipo de medidas introducidas:</h4>
+                <form>
+                    <input type="radio" name="tipoMedidas" value="medidasInternas" id="medidasInternas">
+                    <label for="medidasInternas">Medidas internas</label>
+                    <input type="radio" name="tipoMedidas" value="medidasdEntreHendidos" id="medidasdEntreHendidos">
+                    <label for="medidasdEntreHendidos">Medidas entre hendidos</label>
+                    <input type="radio" name="tipoMedidas" value="medidasExternas" id="medidasExternas">
+                    <label for="medidasExternas">Medidas externas</label>
+                </form>
             </div>
             <br>
             <div>
@@ -51,42 +53,37 @@
             </div>
             <br>
             <div>
-                <h2>Opciones de impresión:</h2>
+                <h2>Opciones de impresión:</h2><br>
                 <label for="numerodetintas">Numero de tintas:</label>
                 <input type="number" name="numerodetintas" id="numerodetintas" value="1" min="0" max="4">
-                <!-- <select id="Proveedor">
-                    <option value="Euroflexo">Euroflexo</option>
-                    <option value="Diflex">Diflex</option>
-                    <option value="Globalflexo">Globalflexo</option>
-                </select> -->
                 <select id="TipoDeIMpresión">
-                    <option value="2">Liquido 6.00</option>
-                    <option value="1">Liquido 4.32</option>
-                    <option value="3">Solido 6.00</option>
-                    <option value="4">Solido 4.23</option>
-                    <option value="5">Foam</option>
-<!--                     <option value="6">Solido HD</option>
- -->                </select>
+                    <option value="0.0115">Liquido 6.00</option>
+                    <option value="0.0158">Liquido 4.32</option>
+                    <option value="0.0195">Solido 6.00</option>
+                    <option value="0.0180">Solido 4.23</option>
+                    <option value="0.0240">Foam</option>
+                    <!--                     <option value="6">Solido HD</option>
+                    -->                </select>
+                </div>
+                <div>
+                    <input type="checkbox" name="trimMasa" id="trimMasa">
+                    <label for="trimMasa">Con masa o indiana.</label>
+                    <input type="checkbox" name="tirasArrastre" id="tirasArrastre">
+                    <label for="tirasArrastre">Tiras de arrastre</label>
+                </div>
             </div>
             <br>
             <input type="button" value="Calcular y valorar" onclick="CalcularDatosMartin()">
             <br>
-            <div id="aparecer" class="desaparecer">
+            <div id="aparecer" class="desaparecer"></div>
+            <div id="paletizado"></div>
+        </div>
 
-                
-                    
-                    <!-- <b>% de impresión:</b><span id="elemento7"></span><br>
-                    <b>coste de Troquel:</b><span id="elemento8"></span><br> -->
-                
-            </div>
-        </div>    
-    </div>
-
-    <footer>
-        <span id="footer"></span>
-    </footer>
-
-    <script src="header.js"></script>
-    <script src="ScriptMartin.js"></script>
-</body>
+        <footer>
+            <span id="footer"></span>
+        </footer>
+        
+        <script src="header.js"></script>
+        <script src="ScriptMartin.js"></script>
+    </body>
 </html>

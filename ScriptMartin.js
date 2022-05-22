@@ -1,3 +1,7 @@
+/* ------------------------------------------
+              Datos recursivos
+------------------------------------------ */
+
 const ValoresPreciosCliche = [
   {
     nombre: "Resumen",
@@ -99,23 +103,6 @@ function datosMartinHendidos() {
     }
 }
 
-
-function calcularEntreHendidos() {
-    document.getElementById("optionEntreHendidos").innerHTML = `<br><br><div class="datosEntreHendidos" id="calcularEntreHendidos"> <select id="canalesMartin"> <option value="canalB">Canal B</option> <option value="canalC">Canal C</option> <option value="canalEB">Canal EB</option> <option value="canalBC">Canal BC</option> </select> <input type="number" id="largoEntreHendidos" placeholder="largo"><b> x </b> <input type="number" id="anchoEntreHendidos" placeholder="ancho"><b> x </b> <input type="number" id="altoEntreHendidos" placeholder="alto"> <input type="button" value="Calcular" onclick="enviarTexto()"> </div>` 
-}
-
-function enviarTexto() {
-    const anchoEntreHendidos = document.getElementById("anchoEntreHendidos").value;
-    const largoEntreHendidos = document.getElementById("largoEntreHendidos").value;
-    const altoEntreHendidos = document.getElementById("altoEntreHendidos").value;
-    const {c1, c2, s} = datosMartinHendidos();
-  
-
-    document.getElementById("anchoMartin").value = anchoEntreHendidos - c1;
-    document.getElementById("largoMartin").value = largoEntreHendidos - c1;
-    document.getElementById("altoMartin").value = altoEntreHendidos - c2;
-}
-
 //Esta función es solo para dar la ficha
 function fecha() {
   let hoy = new Date();
@@ -137,11 +124,6 @@ function optionExtra() {
     let extrax = 0;
   }
 };
- 
-
-
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 
 // Datos ontenidos de los diferentes Input de la web
 function datosMartin() {
@@ -151,14 +133,12 @@ function datosMartin() {
   const m201 = document.getElementById("m201").checked;
   const m203 = document.getElementById("m203").checked;
   const canalesMartin = document.getElementById("canalesMartin2").value;
-  const largo = Number(document.getElementById("largoMartin").value);
-  const ancho = Number(document.getElementById("anchoMartin").value);
-  const alto = Number(document.getElementById("altoMartin").value);
+
   /* const costeCliche = document.getElementById("Proveedor").value; */
   const costeCliche = "Resumen";
   const NumeroCliches = parseInt(document.getElementById("numerodetintas").value);
   const TipoDeIMpresión = Number(document.getElementById("TipoDeIMpresión").value);
-
+  
   const SelectGrade = DatosCanalesMartin.find((grade) => {
     return grade.nombre === canalesMartin
   });
@@ -166,22 +146,33 @@ function datosMartin() {
     nombre,
     valoresDiferenciaMartin: { c1, c2, s },resta,
   } = SelectGrade;
-
+  
   const PreciosCliche = ValoresPreciosCliche.find((precio) => {
     return precio.nombre === costeCliche;
   });
   const {TipoCliche: {liquido432, liquido600, solido432, solido600, foam, solidoHD284},} = PreciosCliche;
   const {Premontaje} = PreciosCliche;
   const {TipoCliche} = PreciosCliche;
+ 
+  /* Calculo de tipo de medidas */
+  const medidasInternas = document.getElementById("medidasInternas").checked;
+  const medidasEntreHendidos = document.getElementById("medidasdEntreHendidos").checked;
+  const medidasExternas = document.getElementById("medidasExternas").checked;
+
+  const largo1 = Number(document.getElementById("largoMartin").value);
+  const ancho1 = Number(document.getElementById("anchoMartin").value);
+  const alto1 = Number(document.getElementById("altoMartin").value);
+
+
   return {
     trim,
     tiras,
     m200,
     m203,
     canalesMartin,
-    largo,
-    ancho,
-    alto,
+    largo1,
+    ancho1,
+    alto1,
     costeCliche,
     NumeroCliches,
     c1,
@@ -198,6 +189,9 @@ function datosMartin() {
     TipoDeIMpresión,
     nombre,
     resta,
+    medidasEntreHendidos,
+    medidasExternas,
+    medidasInternas,
   };
 }
 // Esta es la función primaria que elige el tipo de caja
@@ -235,9 +229,9 @@ function CalcularDatosMartin() {
     trim,
     tiras,
     canalesMartin,
-    largo,
-    ancho,
-    alto,
+    largo1,
+    ancho1,
+    alto1,
     costeCliche,
     NumeroCliches,
     c1,
@@ -254,7 +248,35 @@ function CalcularDatosMartin() {
     TipoDeIMpresión,
     nombre,
     resta,
+    medidasEntreHendidos,
+    medidasInternas,
+    medidasExternas,
   } = datosMartin();
+  //////////////////////////////////
+  let largo;
+  let ancho;
+  let alto;
+
+  if (medidasInternas) {
+    largo = 0 + largo1;
+    ancho = 0 + ancho1;
+    alto = 0 + alto1;
+  } else if (medidasEntreHendidos) {
+    largo = 0 + largo1 - c1;
+    ancho = 0 + ancho1 - c1;
+    alto = 0 + alto1 - c2;
+  } else if(medidasExternas) {
+    largo = 0 + largo1 - (c1*2);
+    ancho = 0 + ancho1 - (c1*2);
+    alto = 0 + alto1 - (c2*2);
+  } else {
+    largo = 0 + largo1;
+    ancho = 0 + ancho1;
+    alto = 0 + alto1;
+  }
+
+  //////////////////////////////////////////
+
   const coste = [TipoCliche, liquido432, liquido600, solido600, solido432, foam, solidoHD284,]
   const { formatofecha } = fecha();
   const Tlargo = largo + c1;
@@ -281,12 +303,8 @@ function CalcularDatosMartin() {
   const B1Cerrada = Tlargo + Tancho;
   const E = ancho / 2;
   const F = Talto;
-  console.log(F);
-
-
 
 /////////
-console.log(resta);
 let extrax;
 if (trim === true && tiras === false){
    extrax = L+10;
@@ -300,84 +318,115 @@ else if (trim === true && tiras === true) {
 }
 
 ////////////////////////////////////////////////////////////////////////
-document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2>'+
-'<article id="TextToCopy"><span id="OpcionCurinioni"></span>'+
-'<span id="errorMedidas"></span><br>'+
-'<b>Fecha:</b><span id="elemento1"></span><br>'+
-'<b>Medidas internas:</b><span id="elemento2"></span><br>'+
-'<b>Total de placha:</b><span id="elemento3"></span><br>'+
-'<b>Ruta:</b><span id="elemento4"></span><br>'+
-'<b>Coste de cliché:</b><span id="elemento5"></span><br>'+
-'<b>Número de tintas:</b><span id="elemento6"></span><br></article>' +  
-'<span id="error1"></span>' +
-'<span id="error2"></span>' +
-'<span id="error3"></span>' +
-'<span id="error4"></span>' +
-'<span id="error5"></span>' +
-'<span id="error6"></span>' +
-'<span id="error7"></span>' +
-'<span id="error8"></span>' +
-'<span id="error9"></span>' +
-'<span id="error10"></span>' +
-'<span id="error11"></span>';
-/* <input type="button" value="Copiar texto" onclick="CopiarDatos(TextToCopy)"</article><br></br> */;
+document.getElementById("aparecer").innerHTML =
+`<h2>Datos para Docupoint</h2>
+<article id="TextToCopy">
+  <span id="errorMedidas"></span>
+  <span id="OpcionCurinioni"></span>
+  <br>
+    <b>Fecha:</b>
+    <span id="elemento1"></span>
+  <br>
+    <b>Medidas internas:</b>
+    <span id="elemento2"></span>
+  <br>
+    <b>Total de placha:</b>
+    <span id="elemento3"></span>
+  <br>
+    <b>Ruta:</b>
+    <span id="elemento4"></span>
+  <br>
+    <b>Coste de cliché:</b>
+    <span id="elemento5"></span>
+  <br>
+    <b>Número de tintas:</b>
+    <span id="elemento6"></span>
+  <br>
+  </article>
+  <span id="error1"></span>
+  <span id="error2"></span>
+  <span id="error3"></span>
+  <span id="error4"></span>
+  <span id="error5"></span>
+  <span id="error6"></span>
+  <span id="error7"></span>
+  <span id="error8"></span>
+  <span id="error9"></span>
+  <span id="error10"></span>
+  <span id="error11"></span>`;
 
 ///////////////////////////////////////////////////////////////////////
 
-//////////
+
+//////////////////////////////////////////////////////////////////////
   if (extrax <= 750) {
-    document.getElementById("error1").innerHTML = "El largo de plancha es inferior al mínimo de 750mm" + '<br>';
+    document.getElementById("error1").innerHTML =
+    '<br>' + "El largo de plancha es inferior al mínimo de 750mm" + '<br>';
   } else if (extrax >= 2400) {
-    document.getElementById("error1").innerHTML = "El largo de la plancha es superior al máximo de 2400mm" + '<br>';
+    document.getElementById("error1").innerHTML =
+    "El largo de la plancha es superior al máximo de 2400mm" + '<br>';
   }
   ///////////////////////////////////////////////////////////////
   if (H <= 720) {
-    document.getElementById("error2").innerHTML = "La suma de los paneles es inferior al mínimo de 720mm" + '<br>';
+    document.getElementById("error2").innerHTML =
+    "La suma de los paneles es inferior al mínimo de 720mm" + '<br>';
   } else if (H >= 2200) {
-    document.getElementById("error2").innerHTML = "La suma de los paneles es superior al máximo de 2200mm" + '<br>';
+    document.getElementById("error2").innerHTML =
+    "La suma de los paneles es superior al máximo de 2200mm" + '<br>';
   }
   //////////////////////////////////////////////////////
   if (I <= 300) {
-    document.getElementById("error3").innerHTML = "El ancho de plancha es inferior al mínimo de 300mm" + '<br>';
+    document.getElementById("error3").innerHTML =
+    "El ancho de plancha es inferior al mínimo de 300mm" + '<br>';
   } else if (I >= 900) {
-    document.getElementById("error3").innerHTML = "El ancho de plancha es superior a 900mm." + '<br>' +
+    document.getElementById("error3").innerHTML =
+    "El ancho de plancha es superior a 900mm." + '<br>' +
     "Se recomienda cambiar a Curioni, sino usar Sky Feed" +'<br>' ;
   } else if (I >= 1000) {
-    document.getElementById("error3").innerHTML = "El ancho de plancha es superior al máximo de 1000mm" + '<br>';
+    document.getElementById("error3").innerHTML =
+    "El ancho de plancha es superior al máximo de 1000mm" + '<br>';
   }
   //////////////////////////////////////////////////////
   if (Tancho <= 120) {
-    document.getElementById("error4").innerHTML = "El ancho de la caja es inferior al mínimo de 120mm" + '<br>';
+    document.getElementById("error4").innerHTML =
+    "El ancho de la caja es inferior al mínimo de 120mm" + '<br>';
   } else if (Tancho >= 950) {
-    document.getElementById("error4").innerHTML = "El ancho de la caja es superior al máximo de 950mm" + '<br>';
+    document.getElementById("error4").innerHTML =
+    "El ancho de la caja es superior al máximo de 950mm" + '<br>';
   }
   /////////////////////////////////////////////////////////
   if (Tlargo <= 120) {
-    document.getElementById("error5").innerHTML = "El largo de la caja es inferior al mínimo de 120mm" + '<br>';
+    document.getElementById("error5").innerHTML =
+    "El largo de la caja es inferior al mínimo de 120mm" + '<br>';
   } else if (Tlargo >= 1080) {
-    document.getElementById("error5").innerHTML = "El largo de la caja es superior al máximo de 1080mm" + '<br>';
+    document.getElementById("error5").innerHTML =
+    "El largo de la caja es superior al máximo de 1080mm" + '<br>';
   }
   /////////////////////////////////////////////////////////////
   if (B1Cerrada <= 360) {
-    document.getElementById("error6").innerHTML = "La caja plegada es inferior al mínimo de 360mm" + '<br>';
+    document.getElementById("error6").innerHTML =
+    "La caja plegada es inferior al mínimo de 360mm" + '<br>';
   } else if (B1Cerrada >= 1100) {
-    document.getElementById("error6").innerHTML = "La caja plegada es superior al máximo de 1100mm" + '<br>';
+    document.getElementById("error6").innerHTML =
+    "La caja plegada es superior al máximo de 1100mm" + '<br>';
   }
   ///////////////////////////////////////////////////////////////
   if (E >= 300) {
-    document.getElementById("error7").innerHTML = "La solapa es superior al máximo de 300mm de rendija" + '<br>';
+    document.getElementById("error7").innerHTML =
+    "La solapa es superior al máximo de 300mm de rendija" + '<br>';
   }
   ////////////////////////////////////////////////////////////////////
   if (F <= 100) {
-    document.getElementById("error8").innerHTML = "El alto de la caja es inferior al minimo de 100mm" + '<br>';
+    document.getElementById("error8").innerHTML = 
+    "El alto de la caja es inferior al minimo de 100mm" + '<br>';
   } else if (F > 100 && F <= 450 ) {
-    document.getElementById("error8").innerHTML = "La impresión de la caja ha de llevar tiras de arrastre" + '<br>';
+    document.getElementById("error8").innerHTML =
+    "La impresión de la caja ha de llevar tiras de arrastre" + '<br>';
   }else if (F >= 800) {
-    document.getElementById("error8").innerHTML = "El alto de la caja es superior al máximo de 800mm " + '<br>';
+    document.getElementById("error8").innerHTML =
+    "El alto de la caja es superior al máximo de 800mm " + '<br>';
   }
 
-  //Alerta de error
-  document.getElementById("aparecer").style.opacity = "1";
   //Fecha
   document.getElementById("elemento1").innerHTML = "  " + formatofecha;
   //Medidas Internas
@@ -390,20 +439,22 @@ document.getElementById("aparecer").innerHTML = '<h2>Datos para Docupoint</h2>'+
   //Coste del cliche
   document.getElementById("elemento5").innerHTML =
     "  " +
-    ((((Tancho + Tlargo) * 2 * (Talto + Tancho + c1) * ((coste[TipoDeIMpresión]) + Premontaje)) /100) *NumeroCliches).toFixed(2) +" €";
+    ((((Tancho + Tlargo) * 2 * (Talto + Tancho + c1) *
+    ((coste[TipoDeIMpresión]) + Premontaje)) /100) *
+    NumeroCliches).toFixed(2) +" €";
   //Numero de tintas
   document.getElementById("elemento6").innerHTML = "  " + NumeroCliches;
-  // document.getElementById("elemento7").innerHTML = ("  ") + Tancho + (" x ") + Tlargo + (" x ") + Talto;
-  // document.getElementById("elemento8").innerHTML = ("  ") + Tancho + (" x ") + Tlargo + (" x ") + Talto;
+
+/* --------------------------------------------------
+                    Pruebas
+-------------------------------------------------- */
+
+
+/* document.getElementById("paletizado").innerHTML = 
+'<br><input type="button" value="paletizado" onclick="paletizado()">'
 
 }
 
-/* function CopiarDatos(id_elemento) {
-  let Aux= document.createElement("input");
-  Aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
-  document.body.appendChild(Aux);
-  Aux.select();
-  document.execCommand("copy");
-  document.body.removeChild(Aux);
-}; */
-
+function paletizado() {
+  console.log("hola");*/
+} 
