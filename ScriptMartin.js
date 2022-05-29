@@ -2,55 +2,6 @@
               Datos recursivos
 ------------------------------------------ */
 
-const ValoresPreciosCliche = [
-  {
-    nombre: "Resumen",
-    Premontaje: 0.0022,
-    TipoCliche: {
-      liquido432:0.01586,
-      liquido600:0.0115,
-      solido600:0.0195,
-      solido432:0.018,
-      foam:0.024,
-    }
-  },
-  {
-    nombre: "Euroflexo",
-    Premontaje: 0.0022,
-    TipoCliche: {
-      liquido432:0.01586,
-      liquido600:0.0115,
-      solido600:0.0195,
-      solido432:0.018,
-      foam:0,
-      solidoHD284:0,
-    }
-  },
-  {
-    nombre: "Diflex",
-    Premontaje: 0.002,
-    TipoCliche: {
-      liquido432:0.012,
-      liquido600:0.012,
-      solido600:0.0,
-      solido432:0.018,
-      foam:0.004,
-      solidoHD284:0.02,
-    }
-  },
-  {
-    nombre: "Globalflexo",
-    Premontaje: 0.002,
-    TipoCliche: {
-      liquido432:0.012,
-      liquido600:0.012,
-      solido600:0.0,
-      solido432:0.018,
-      foam:0.004,
-      solidoHD284:0.02,
-    }
-  }
-]
 const DatosCanalesMartin = [
     {
       nombre: "canalB",
@@ -147,12 +98,7 @@ function datosMartin() {
     valoresDiferenciaMartin: { c1, c2, s },resta,
   } = SelectGrade;
   
-  const PreciosCliche = ValoresPreciosCliche.find((precio) => {
-    return precio.nombre === costeCliche;
-  });
-  const {TipoCliche: {liquido432, liquido600, solido432, solido600, foam, solidoHD284},} = PreciosCliche;
-  const {Premontaje} = PreciosCliche;
-  const {TipoCliche} = PreciosCliche;
+
  
   /* Calculo de tipo de medidas */
   const medidasInternas = document.getElementById("medidasInternas").checked;
@@ -162,6 +108,9 @@ function datosMartin() {
   const largo1 = Number(document.getElementById("largoMartin").value);
   const ancho1 = Number(document.getElementById("anchoMartin").value);
   const alto1 = Number(document.getElementById("altoMartin").value);
+
+  const porcentajeTinta = Number(document.getElementById("PorcentajeTinta").value);
+
 
 
   return {
@@ -178,20 +127,13 @@ function datosMartin() {
     c1,
     c2,
     s,
-    TipoCliche,
-    liquido432,
-    liquido600,
-    solido600,
-    solido432,
-    foam,
-    solidoHD284,
-    Premontaje,
     TipoDeIMpresión,
     nombre,
     resta,
     medidasEntreHendidos,
     medidasExternas,
     medidasInternas,
+    porcentajeTinta,
   };
 }
 // Esta es la función primaria que elige el tipo de caja
@@ -237,20 +179,13 @@ function CalcularDatosMartin() {
     c1,
     c2,
     s,
-    Premontaje,
-    TipoCliche,
-    liquido432,
-    liquido600,
-    solido600,
-    solido432,
-    foam,
-    solidoHD284,
     TipoDeIMpresión,
     nombre,
     resta,
     medidasEntreHendidos,
     medidasInternas,
     medidasExternas,
+    porcentajeTinta,
   } = datosMartin();
   //////////////////////////////////
   let largo;
@@ -277,11 +212,10 @@ function CalcularDatosMartin() {
 
   //////////////////////////////////////////
 
-  const coste = [TipoCliche, liquido432, liquido600, solido600, solido432, foam, solidoHD284,]
   const { formatofecha } = fecha();
-  const Tlargo = largo + c1;
-  const Tancho = ancho + c1;
-  const Talto = alto + c2;
+  const Tlargo = largo1 + c1;
+  const Tancho = ancho1 + c1;
+  const Talto = alto1 + c2;
   const pestaña = s;
   const L = (Tancho + Tlargo) * 2 + pestaña;
   const H = (Tancho + Tlargo) * 2;
@@ -342,6 +276,10 @@ document.getElementById("aparecer").innerHTML =
     <b>Número de tintas:</b>
     <span id="elemento6"></span>
   <br>
+    <b>Porcentaje de impresión:</b>
+    <span id="elemento7"></span>
+<br>
+
   </article>
   <span id="error1"></span>
   <span id="error2"></span>
@@ -439,11 +377,19 @@ document.getElementById("aparecer").innerHTML =
   //Coste del cliche
   document.getElementById("elemento5").innerHTML =
     "  " +
-    ((((Tancho + Tlargo) * 2 * (Talto + Tancho + c1) *
-    ((coste[TipoDeIMpresión]) + Premontaje)) /100) *
+    ((((((Tancho + Tlargo) * 2) * (Talto + Tancho + c1) )*
+    (TipoDeIMpresión + 0.0022)) /100) *
     NumeroCliches).toFixed(2) +" €";
   //Numero de tintas
   document.getElementById("elemento6").innerHTML = "  " + NumeroCliches;
+  // Porcentaje de impresión
+  document.getElementById("elemento7").innerHTML = "  " + porcentajeTinta + " %";
+
+/* --------------------------------------------------
+              MAXIMOS Y MINIMOS DE MAQUINA
+-------------------------------------------------- */
+
+
 
 /* --------------------------------------------------
                     Pruebas

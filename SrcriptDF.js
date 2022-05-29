@@ -119,50 +119,68 @@ if (datoBobina > minBobina && datoBobina < industrial) {
 
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
+/*--------------------------------------------------- 
+                  JS BOBINAS
+---------------------------------------------------*/
+
+
 
     console.log(industrial);
     console.log(minBobina);
     console.log(datoBobina);
     console.log(acopleBobina);
-/*     document.getElementById("ResultadosDF").innerHTML =  nombre;
- */ 
 let bandaX = 1
 if (bandaX >= 8) {
   bandaX = 1
 }
 document.getElementById("bobina1").innerHTML = 
 '<td>1900</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))/19).toFixed(2) + '</td>';
+'<td>' + (1900-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (1900-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (1900-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (1900-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (1900-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (1900-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (1900-(ApDF * bandaX++)) + '</td>';
 console.log(bandaX);
 if (bandaX >= 8) {
   bandaX = 1
 }
 document.getElementById("bobina2").innerHTML = 
-'<td>1900</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>'+
-'<td>' + ((1900 - (ApDF * bandaX++))) + '</td>';
+'<td>2200</td>'+
+'<td>' + (2200-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2200-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2200-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2200-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2200-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2200-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2200-(ApDF * bandaX++)) + '</td>';
 console.log(bandaX);
 if (bandaX >= 8) {
   bandaX = 1
 }
 document.getElementById("bobina3").innerHTML = 
-'<td>1900</td>'+
-'<td>' + (( (ApDF * bandaX++))) + '</td>'+
-'<td>' + (( (ApDF * bandaX++))) + '</td>'+
-'<td>' + (( (ApDF * bandaX++))) + '</td>'+
-'<td>' + (( (ApDF * bandaX++))) + '</td>'+
-'<td>' + (( (ApDF * bandaX++))) + '</td>'+
-'<td>' + (( (ApDF * bandaX++))) + '</td>'+
-'<td>' + (( (ApDF * bandaX++))) + '</td>';
+'<td>2320</td>'+
+'<td>' + (2320-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2320-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2320-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2320-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2320-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2320-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2320-(ApDF * bandaX++)) + '</td>';
+console.log(bandaX);
+if (bandaX >= 8) {
+  bandaX = 1
+}
+document.getElementById("bobina4").innerHTML = 
+'<td>2500</td>'+
+'<td>' + (2500-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2500-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2500-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2500-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2500-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2500-(ApDF * bandaX++)) + '</td>'+
+'<td>' + (2500-(ApDF * bandaX++)) + '</td>';
+
+
 }
