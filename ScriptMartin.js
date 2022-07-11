@@ -193,22 +193,25 @@ function CalcularDatosMartin() {
   let alto;
 
   if (medidasInternas) {
-    largo = 0 + largo1;
     ancho = 0 + ancho1;
+    largo = 0 + largo1;
     alto = 0 + alto1;
   } else if (medidasEntreHendidos) {
-    largo = 0 + largo1 - c1;
     ancho = 0 + ancho1 - c1;
+    largo = 0 + largo1 - c1;
     alto = 0 + alto1 - c2;
   } else if(medidasExternas) {
-    largo = 0 + largo1 - (c1*2);
     ancho = 0 + ancho1 - (c1*2);
+    largo = 0 + largo1 - (c1*2);
     alto = 0 + alto1 - (c2*2);
   } else {
-    largo = 0 + largo1;
     ancho = 0 + ancho1;
+    largo = 0 + largo1;
     alto = 0 + alto1;
   }
+
+
+
 
   //////////////////////////////////////////
 
@@ -219,7 +222,7 @@ function CalcularDatosMartin() {
   const pestaña = s;
   const L = (Tancho + Tlargo) * 2 + pestaña;
   const H = (Tancho + Tlargo) * 2;
-  const solapa = Math.trunc(ancho/2) + resta;
+  let solapa = Math.trunc(ancho/2) + resta;
   ////////////////////////////////////////////////////////////
   const { m200, m201, m203 } = datosMartin();
   let solapa2;
@@ -237,6 +240,10 @@ function CalcularDatosMartin() {
   const B1Cerrada = Tlargo + Tancho;
   const E = ancho / 2;
   const F = Talto;
+console.log(I);
+console.log(largo + "x" + ancho + "x" + alto);
+console.log(solapa2);
+console.log(solapa);
 
 /////////
 let extrax;
