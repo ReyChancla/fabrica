@@ -244,9 +244,14 @@ footer p{
 .infoDocupoint div{
   margin-right: 20px;
 }
-textarea {
-  width: 400px;
+.textarea {
+  width: 500px;
   height: 400px;
+}
+
+.comentarioDiseno {
+  width: 500px;
+  height: 100px;
 }
 
 /*----------------------------------------------------

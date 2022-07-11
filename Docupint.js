@@ -17,7 +17,7 @@ function crear() {
     const Amador = document.getElementById("Amador").checked;
     const Marco = document.getElementById("Marco").checked;
     const Fran = document.getElementById("Fran").checked;
-    const Docupoint = document.getElementById("Docupoint").value;
+    const WebCenter = document.getElementById("WebCenter").value;
     
     //////////////////////////////////////////////////////////
     //Nombre
@@ -25,36 +25,37 @@ function crear() {
     
     let name;
     if (Manuel) {
-        name = "MP - " + formatofecha + `
+        name = "MP - " + formatofecha + " - " + WebCenter + `
 `; 
     } else if (Raquel){
-        name = "RM - " + formatofecha + `
- `; 
+        name = "RM - " + formatofecha + " - " + WebCenter + `
+`; 
     } else if (Amador){
-        name = "AA - " + formatofecha + `
+        name = "AA - " + formatofecha + " - " + WebCenter + `
 `; 
     } else if (Marco){
-        name = "MM - " + formatofecha + `
- `; 
+        name = "MM - " + formatofecha + " - " + WebCenter + `
+`; 
     } else if (Fran){
-        name = "FM - " + formatofecha + `
+        name = "FM - " + formatofecha + " - " + WebCenter + `
 `; 
     } else {
-        name = "OT - " + formatofecha + `
+        name = "OT - " + formatofecha + " - " + WebCenter + `
 `;
     }
     //////////////////////////////////////////////////////////
     //Estructural
     //////////////////////////////////////////////////////////
-const MuestraEstructural = document.getElementById("MuestraEstructural").checked;
-const InfoEstructural = document.getElementById("InfoEstructural").checked;
+    const MuestraEstructural = document.getElementById("MuestraEstructural").checked;
+    const InfoEstructural = document.getElementById("InfoEstructural").checked;
+    const Docupoint = document.getElementById("Docupoint").value;
     
 let Estructural;
 if (MuestraEstructural) {
-    Estructural = "Estructural (DSS-" + year + "-" + Docupoint + ") según muestra." + `
+    Estructural = "Estructural " + Docupoint +  " según muestra." + `
 `; 
 } else if (InfoEstructural){
-    Estructural = "Estructural (DSS-" + year + "-" + Docupoint + ") según información." + `
+    Estructural = "Estructural " + Docupoint +  " según información." + `
 `; 
 } else if (NadaEstructural){
     Estructural = ``; 
@@ -70,23 +71,24 @@ const GCMI = document.getElementById("GCMI").checked;
 const Pantone = document.getElementById("Pantone").checked;
 const PropuestaInterna = document.getElementById("PropuestaInterna").checked;
 const NadaGrafico = document.getElementById("NadaGrafico").checked;
+const DisenoGrafico = document.getElementById("DisenoGrafico").value;
 
 let GraficoColor;
 
 if (SegunMuestra) {
-    GraficoColor = "Gráfico (G-" + year + "-" + Docupoint + ") según muetra." + `
+    GraficoColor = "Gráfico " + DisenoGrafico + " según muestra." + `
 `; 
 } else if (ReferenciasActivas){
-    GraficoColor = "Gráfico (G-" + year + "-" + Docupoint + ") según referencias activas." + `
+    GraficoColor = "Gráfico " + DisenoGrafico + " según referencias activas." + `
 `; 
 } else if (GCMI){
-    GraficoColor = "Gráfico (G-" + year + "-" + Docupoint + ") según GCMI." + `
+    GraficoColor = "Gráfico " + DisenoGrafico + " según GCMI." + `
 `; 
 } else if (Pantone){
-    GraficoColor = "Gráfico (G-" + year + "-" + Docupoint + ") según Pantone del cliente." + `
+    GraficoColor = "Gráfico " + DisenoGrafico + " según Pantone del cliente." + `
 `; 
 } else if (PropuestaInterna){
-    GraficoColor = "Gráfico (G-" + year + "-" + Docupoint + ") según propuesta interna." + `
+    GraficoColor = "Gráfico " + DisenoGrafico + " según propuesta interna." + `
 `; 
 }else if (NadaGrafico){
     GraficoColor = ``; 
@@ -117,14 +119,56 @@ if (MuestrasCortadas) {
 } else {
 MuestrasEnviadasCortadas2 = ``;
 }
+//////////////////////////////////////////////////////////
+//Muestras de color
+//////////////////////////////////////////////////////////
+const PruebaColor = document.getElementById("PruebaColor").checked;
+const gmg = document.getElementById("gmg").checked;
+const PruebaPegada = document.getElementById("PruebaPegada").checked;
+const SinMuestraColor = document.getElementById("SinMuestraColor").checked;
 
+let MuestrasColor;
+
+if (PruebaColor) {
+    MuestrasColor = "Se manda una muestra de color impreso." + `
+`; 
+} else if (gmg){
+    MuestrasColor = "Se envía una muestra de color tramado impreso." + `
+`;  
+} else if (PruebaPegada){
+    MuestrasColor = "Se manda prototipo impreso y tramado, sobre la caja." + `
+`; 
+}else if (SinMuestraColor){
+    MuestrasColor = ``; 
+} else {
+MuestrasColor = ``;
+}
+
+
+//////////////////////////////////////////////////////////
+//Comenatarios
+//////////////////////////////////////////////////////////
+
+const ComentarioDiseno = document.getElementById('ComentarioDiseno').value;
+
+let ComentarioDiseno2;
+
+if (ComentarioDiseno === "Comentarios") {
+    ComentarioDiseno2 = ``;
+} else {
+    ComentarioDiseno2 = ComentarioDiseno + `
+`;
+}
 
     document.getElementById("contenedor").innerHTML = 
     name + 
     Estructural + 
     GraficoColor +
     MuestrasEnviadasCortadas2 +
-"************************";  
+    MuestrasColor + 
+    ComentarioDiseno2 + 
+`
+************************`;  
 
 }
 

@@ -26,19 +26,14 @@
                 <input type="radio" name="Nombre" id="Fran">
                 <label for="Fran">Francisco</label>
             </div>
-            <div class="infoDocupoint">
-                <div>
-                    <p>Nº de Docupoint</p>
-                    <input type="text" name="Docupoint" id="Docupoint" value="XXXXXXXX-22">
-                </div>
-                <div>
-                    <p>Nº de Web center</p>
-                    <input type="text" name="WebCenter" id="WebCenter">
-                </div>                
-            </div>
-            <br>
-            <h3>Diseño estructural:</h3>
+            <input type="text" name="WebCenter" id="WebCenter" placeholder="Nº de Web Center">               
+            <br><br>
+            <h3>Diseño estructural:</h3><br>
             <div>
+                <div>
+                    <p>Número de <strong>.ARD</strong></p>
+                    <input type="text" name="Docupoint" id="Docupoint" value="XXXXXXXX-22">
+                </div><br>
                 <input type="radio" name="Estructural" id="MuestraEstructural">
                 <label for="MuestraEstructural">Según muestra</label>
                 <input type="radio" name="Estructural" id="InfoEstructural">
@@ -48,6 +43,10 @@
             </div>
             <h3>Diseño gráfico:</h3>
             <div>
+                <div>
+                    <p>Número del gráfico</p>
+                    <input type="text" name="DisenoGrafico" id="DisenoGrafico" value="G-XXXXXXXX-22">
+                </div><br>
                 <input type="radio" name="GraficoColor" id="SegunMuestra">
                 <label for="SegunMuestra">Segun muetra</label>
                 <input type="radio" name="GraficoColor" id="ReferenciasActivas">
@@ -166,9 +165,25 @@
                         <option value="EB53KK2L">EB53KK2L</option>
                         <option value="EB54KGK2L">EB54KGK2L</option>
                         <option value="EB57KK2L">EB57KK2L</option>
-                    </select>
-                    <input type="radio" name="MuestrasEnviadas" id="SinMuestrasCortadas">
-                    <label for="SinMuestrasCortadas">Sin muestras</label>
+                </select>
+                <input type="radio" name="MuestrasEnviadas" id="SinMuestrasCortadas">
+                <label for="SinMuestrasCortadas">Sin muestras</label>
+                </div>
+
+                <h3>Muestras de color</h3>
+                <div>
+                    <input type="radio" name="MuestrasColor" id="PruebaColor">
+                    <label for="PruebaColor">Prueba de color</label>
+                    <input type="radio" name="MuestrasColor" id="gmg">
+                    <label for="gmg">Prueba GMG</label>
+                    <input type="radio" name="MuestrasColor" id="PruebaPegada">
+                    <label for="PruebaPegada">Prueba pegada a caja</label>
+                    <input type="radio" name="MuestrasColor" id="SinMuestraColor">
+                    <label for="SinMuestraColor">Sin muestra de color</label>
+                </div>
+                <h3>Comentarios:</h3>
+                <div>
+                    <input type="text" id="ComentarioDiseno" class="ComentarioDiseno" value="Comentarios">
                 </div>
                 <!--             <h3>Estudios</h3>
                     <div>
@@ -190,19 +205,8 @@
 
             <input type="button" value="Crear" onclick="crear()"><br><br>
 
-
-
-
-            <!-- <div>
-                <input type="radio" name="trimMasa" id="trimMasa">
-                <label for="trimMasa">Con masa o indiana.</label>
-                <input type="radio" name="tirasArrastre" id="tirasArrastre">
-            <label for="tirasArrastre">Tiras de arrastre</label>
-        </div> -->
-        
-
             <div>
-                <textarea id="contenedor"></textarea><br>
+                <textarea id="contenedor" class="textarea"></textarea><br>
                 <input type="button" value="Copy" onclick="copiar()">
             </div>
         </div>
