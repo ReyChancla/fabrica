@@ -13,6 +13,7 @@ document.getElementById("cabecera").innerHTML =
             <li><a href="Curioni.html" class="link">Curioni</a></li>
             <li><a href="martin.html" class="link">Martin</a></li>
             <li><a href="info.html" class="link">Info</a></li>
+            <li><a href="Docupoint.html" class="link">Docupoint</a></li>
         </ul>
     </nav>`
 

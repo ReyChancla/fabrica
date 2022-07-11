@@ -233,6 +233,23 @@ footer p{
   font-weight: bold;
 }
 /*----------------------------------------------------
+                        Docupoint
+----------------------------------------------------*/
+
+.infoDocupoint {
+  display: flex;
+  font-size: large;
+
+}
+.infoDocupoint div{
+  margin-right: 20px;
+}
+textarea {
+  width: 400px;
+  height: 400px;
+}
+
+/*----------------------------------------------------
                         Pruebas
 ----------------------------------------------------*/
 
