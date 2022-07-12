@@ -152,7 +152,6 @@ MuestrasColor = ``;
  const EstudioCape = document.getElementById("EstudioCape").checked;
  const EstudioOneA = document.getElementById("EstudioOneA").checked;
  const ModificacionArticulo = document.getElementById("ModificacionArticulo").checked;
- const NumeroARticulo = document.getElementById("NumeroARticulo").value;
     let AnalisisCalidad2;
     if (AnalisisCalidad) {
         AnalisisCalidad2 = `Se realiza analisis de calidad.
@@ -208,6 +207,46 @@ if (ComentarioDiseno === "Comentarios") {
     ComentarioDiseno2 = ComentarioDiseno + "." + `
 `;
 }
+
+//////////////////////////////////////////////////////////
+//Datos comerciales
+//////////////////////////////////////////////////////////
+const NotasComerciales = document.getElementById('NotasComerciales').checked;
+
+const largo = document.getElementById('largo').value;
+const ancho = document.getElementById('ancho').value;
+const alto = document.getElementById('alto').value;
+const MediaCaja = document.getElementById("MediaCaja").checked;
+
+const AnchoTotal = document.getElementById('AnchoTotal').value;
+const LargoTotal = document.getElementById('LargoTotal').value;
+
+const PosesAncho = document.getElementById('PosesAncho').value;
+const PosesLargo = document.getElementById('PosesLargo').value;
+
+const Pasada1 = document.getElementById('Pasada1').value;
+const Pasada2 = document.getElementById('Pasada2').value;
+const Pasada3 = document.getElementById('Pasada3').value;
+
+const CosteSubcontratacion = document.getElementById('CosteSubcontratacion').value;
+
+const PorcentajeImpresion = document.getElementById('PorcentajeImpresion').value;
+
+const CosteTroquel = document.getElementById('CosteTroquel').value;
+const CosteCliche = document.getElementById('CosteCliche').value;
+
+/* let NotasComerciales2
+if (NotasComerciales) {
+    NotasComerciales2 = `Datos comerciales:
+Medias interiores: ${largo} x ${ancho} x ${alto} mm. ${MediaCaja}.
+Medidas unitarias: ${AnchoTotal} x ${LargoTotal} mm.
+Poses:
+`
+} else {
+    
+} */
+
+
 //////////////////////////////////////////////////////////
 //Cadena de texto
 //////////////////////////////////////////////////////////
@@ -215,8 +254,8 @@ if (ComentarioDiseno === "Comentarios") {
     `${name}${Estructural}${GraficoColor}${MuestrasEnviadasCortadas2}`+
     `${MuestrasColor}${AnalisisCalidad2}`+
     `${AnalisisCalidad2}${PresupuestosSubcontratacion2}${EstudioCape2}`+
-    `${EstudioOneA2}${ModificacionArticulo2}${ComentarioDiseno2}
-Datos comerciales:
+    `${EstudioOneA2}${ModificacionArticulo2}${ComentarioDiseno2}`+
+    `
 
 **************************************************`;
 }
