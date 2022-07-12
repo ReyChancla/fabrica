@@ -143,6 +143,55 @@ if (PruebaColor) {
 } else {
 MuestrasColor = ``;
 }
+ //////////////////////////////////////////////////////////
+ //Nombre
+ //////////////////////////////////////////////////////////
+ 
+ const AnalisisCalidad = document.getElementById("AnalisisCalidad").checked;
+ const PresupuestosSubcontratacion = document.getElementById("PresupuestosSubcontratacion").checked;
+ const EstudioCape = document.getElementById("EstudioCape").checked;
+ const EstudioOneA = document.getElementById("EstudioOneA").checked;
+ const ModificacionArticulo = document.getElementById("ModificacionArticulo").checked;
+ const NumeroARticulo = document.getElementById("NumeroARticulo").value;
+    let AnalisisCalidad2;
+    if (AnalisisCalidad) {
+        AnalisisCalidad2 = `Se realiza analisis de calidad.
+`; 
+    } else {
+        AnalisisCalidad2 = ``;
+    }
+    ///////////////
+    let PresupuestosSubcontratacion2;
+    if (PresupuestosSubcontratacion) {
+        PresupuestosSubcontratacion2 = `Se guarda presupuesto de subcontratación.
+`; 
+    } else {
+        PresupuestosSubcontratacion2 = ``;
+    }
+    //////////////
+    let EstudioCape2;
+    if (EstudioCape) {
+        EstudioCape2 = `Se realiza analisis estudio de CAPE.
+`; 
+    } else {
+        EstudioCape2 = ``;
+    }
+    /////////////////
+    let EstudioOneA2;
+    if (EstudioOneA) {
+        EstudioOneA2 = `Se realiza analisis estudio de OneA.
+`; 
+    } else {
+        EstudioOneA2 = ``;
+    }
+    //////////////////
+    let ModificacionArticulo2;
+    if (ModificacionArticulo && NumeroARticulo > 0) {
+        ModificacionArticulo2 = `Se Modifica el artículo  ${NumeroARticulo}.
+`; 
+    } else {
+        ModificacionArticulo2 = ``;
+    }
 
 
 //////////////////////////////////////////////////////////
@@ -156,20 +205,20 @@ let ComentarioDiseno2;
 if (ComentarioDiseno === "Comentarios") {
     ComentarioDiseno2 = ``;
 } else {
-    ComentarioDiseno2 = ComentarioDiseno + `
+    ComentarioDiseno2 = ComentarioDiseno + "." + `
 `;
 }
-
+//////////////////////////////////////////////////////////
+//Cadena de texto
+//////////////////////////////////////////////////////////
     document.getElementById("contenedor").innerHTML = 
-    name + 
-    Estructural + 
-    GraficoColor +
-    MuestrasEnviadasCortadas2 +
-    MuestrasColor + 
-    ComentarioDiseno2 + 
-`
-************************`;  
+    `${name}${Estructural}${GraficoColor}${MuestrasEnviadasCortadas2}`+
+    `${MuestrasColor}${AnalisisCalidad2}`+
+    `${AnalisisCalidad2}${PresupuestosSubcontratacion2}${EstudioCape2}`+
+    `${EstudioOneA2}${ModificacionArticulo2}${ComentarioDiseno2}
+Datos comerciales:
 
+**************************************************`;
 }
 
 
