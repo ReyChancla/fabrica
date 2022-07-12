@@ -31,8 +31,8 @@
             <h3>Diseño estructural:</h3><br>
             <div>
                 <div>
-                    <p>Número de <strong>.ARD</strong></p>
-                    <input type="text" name="Docupoint" id="Docupoint" value="XXXXXXXX-22">
+                    <p>Número de .ARD</p>
+                    <input type="text" name="Docupoint" id="Docupoint" placeholder="Nº de ARD_versión">
                 </div><br>
                 <input type="radio" name="Estructural" id="MuestraEstructural">
                 <label for="MuestraEstructural">Según muestra</label>
@@ -45,7 +45,7 @@
             <div>
                 <div>
                     <p>Número del gráfico</p>
-                    <input type="text" name="DisenoGrafico" id="DisenoGrafico" value="G-XXXXXXXX-22">
+                    <input type="text" name="DisenoGrafico" id="DisenoGrafico" placeholder="Nº del gráfico-versión">
                 </div><br>
                 <input type="radio" name="GraficoColor" id="SegunMuestra">
                 <label for="SegunMuestra">Segun muetra</label>
@@ -191,17 +191,79 @@
                     <input type="checkbox" id="EstudioCape">
                     <label for="EstudioCape">Estudio CAPE </label>
                     <input type="checkbox" id="EstudioOneA">
-                    <label for="EstudioOneA">Estudio OneA</label><br>
+                    <label for="EstudioOneA">Estudio OneA</label>
                     <input type="checkbox" id="ModificacionArticulo">
                     <label for="ModificacionArticulo">Modificación de artículo</label>
-                    <input type="number" id="NumeroARticulo" placeholder="Nº Artículo">
                 </div>
 
-                <h3>Comentarios:</h3>
+                <h3>Comentarios del diseño:</h3>
                 <div>
                     <input type="text" id="ComentarioDiseno" class="ComentarioDiseno" value="Comentarios">
                 </div>
-             
+                <h2>Notas para el comercial:</h2>
+                <div>
+                    <h3>Medias internas:</h3>
+                    <input type="number" id="largo" placeholder="Largo"> x
+                    <input type="number" id="ancho" placeholder="Ancho"> x
+                    <input type="number" id="alto" placeholder="Alto">
+                    <input type="checkbox" id="MediaCaja">
+                    <label for="MediaCaja">Media caja</label>
+                </div>
+                <div>
+                    <h3>Medidas unitarias:</h3>
+                    <input type="number" id="AnchoTotal" placeholder="Ancho plancha"> x 
+                    <input type="number" id="LargoTotal" placeholder="Alto plancha">
+                    <h3>Poses:</h3>
+                    <input type="number" id="PosesAncho" value="1"> x 
+                    <input type="number" id="PosesLargo" value="1">
+                </div>
+                <div>
+                    <h3>Ruta de fabricación: UP1/</h3><br>
+                    <select id="Pasada1">
+                        <option value="Nada">1ª pasada</option>
+                        <option value="DF">Dong Fang</option>
+                        <option value="Bobst">Bobst</option>
+                        <option value="Curioni">Curioni</option>
+                        <option value="Martin">Martin</option>
+                        <option value="ManipuladoExterno">Manipulado externo</option>
+                    </select>
+                    <select id="Pasada2">
+                        <option value="Nada">2ª pasada</option>
+                        <option value="DF">Dong Fang</option>
+                        <option value="Bobst">Bobst</option>
+                        <option value="Curioni">Curioni</option>
+                        <option value="Martin">Martin</option>
+                        <option value="Pegadora">Pegadora</option>
+                        <option value="ManipuladoExterno">Manipulado externo</option>
+                    </select>
+                    <select id="Pasada3">
+                        <option value="Nada">3ª pasada</option>
+                        <option value="DF">Dong Fang</option>
+                        <option value="Bobst">Bobst</option>
+                        <option value="Curioni">Curioni</option>
+                        <option value="Martin">Martin</option>
+                        <option value="Pegadora">Pegadora</option>
+                        <option value="ManipuladoExterno">Manipulado externo</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>Coste de subcontratación:</h3>
+                    <input type="number" id="CosteSubcontratacion" value="0"> €
+                </div>
+                <div>
+                    <h3>Tintas:</h3>
+                    <h4>Porcentaje de impresión: </h4>
+                    <input type="number" id="PorcentajeImpresion" value="0"> %
+                </div>
+                <div>
+                    <h3>Utillaje:</h3>
+                    <p>Coste del troquel: <input type="number" id="CostreTroquel" value="0"> €</p>
+                    <p>Coste del cliché:   <input type="number" id="CostreTCliche" value="0"> €</p>
+                </div>
+                <div>
+                    <h3>Comentarios comerciales:</h3>
+                    <input type="text" id="ComentarioComercial" class="ComentarioComercial" value="Comentarios">
+                </div>
 
 
             <input type="button" value="Crear" onclick="crear()"><br><br>
@@ -210,6 +272,7 @@
                 <textarea id="contenedor" class="textarea"></textarea><br>
                 <input type="button" value="Copy" onclick="copiar()">
             </div>
+            
         </div>
 
     </div>
