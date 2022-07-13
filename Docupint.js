@@ -317,7 +317,7 @@ if (CosteSubcontratacion > 0) {
 
 let NumeroTintas = document.getElementById('NumeroTintas').value;
 if (NumeroTintas > 0) {
-    NumeroTintas = `Costes de troquel: ${NumeroTintas}€.
+    NumeroTintas = `Numero de Tintas: ${NumeroTintas}€.
 `;
 } else {
     NumeroTintas = ``;
@@ -325,7 +325,7 @@ if (NumeroTintas > 0) {
 
 let PorcentajeImpresion = document.getElementById('PorcentajeImpresion').value;
 if (PorcentajeImpresion > 0) {
-    PorcentajeImpresion = `Costes de impresión: ${PorcentajeImpresion}%.
+    PorcentajeImpresion = `Porcentaje de impresión: ${PorcentajeImpresion}%.
 `;
 } else {
     PorcentajeImpresion = ``;
