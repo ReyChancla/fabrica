@@ -18,4 +18,4 @@ document.getElementById("cabecera").innerHTML =
     </nav>`
 
 document.getElementById("footer").innerHTML =
-    `<p>Creado por Fran Millan. 2022 // versión alpha 0.4.42</p>`
+    `<p>Creado por Fran Millan. 2022 // versión alpha 0.5.51</p>`

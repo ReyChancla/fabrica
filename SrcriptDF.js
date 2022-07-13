@@ -99,9 +99,8 @@ function CalcularDF () {
     '<span id="error3"></span>'+
     '<span id="error4"></span>'+
     '<span id="error5"></span>'+
-    '<span id="error6"></span>'+ 
-    "Convinación en  bobina" + '<span id="datosConvinacion"></span>' 
-    ;
+    '<span id="error6"></span><br>'+ 
+    '<h3>'+ "Convinación en  bobina" + '<span id="datosConvinacion"></span>' + '</h3>';
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 
@@ -183,4 +182,18 @@ document.getElementById("bobina4").innerHTML =
 '<td>' + (2500-(ApDF * bandaX++)) + '</td>';
 
 
-}
+
+const Bobinas = [1900, 2200, 2350, 2500]
+
+Bobinas.forEach(element => {
+  hola = '<td>' + (element-(ApDF * bandaX++)) + '</td>';
+  
+});
+
+
+
+/* Bobinas.getElementById("bobina4").innerHTML = tablaa
+ */
+
+
+};
