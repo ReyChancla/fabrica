@@ -218,15 +218,74 @@ const ancho = document.getElementById('ancho').value;
 const alto = document.getElementById('alto').value;
 const MediaCaja = document.getElementById("MediaCaja").checked;
 
+let MedidasInternas;
+
+if (largo > 0 && ancho > 0 && alto > 0) {
+    MedidasInternas = `Medidas internas: ${largo} x ${ancho} x ${alto}`;
+} else {
+    MedidasInternas = ``;
+}
+
 const AnchoTotal = document.getElementById('AnchoTotal').value;
 const LargoTotal = document.getElementById('LargoTotal').value;
 
 const PosesAncho = document.getElementById('PosesAncho').value;
 const PosesLargo = document.getElementById('PosesLargo').value;
 
-const Pasada1 = document.getElementById('Pasada1').value;
-const Pasada2 = document.getElementById('Pasada2').value;
-const Pasada3 = document.getElementById('Pasada3').value;
+let Pasada1 = document.getElementById('Pasada1').value;
+let Pasada2 = document.getElementById('Pasada2').value;
+let Pasada3 = document.getElementById('Pasada3').value;
+
+let MargenA;
+let MargenL;
+
+if (Pasada1 = "DF") {
+    MargenA = 20;
+    MargenL = 20;
+} else if (Pasada1 = "Bobst") {
+    MargenA = 25;
+    MargenL = 20;
+} else if (Pasada1 = "Curioni") {
+    MargenA = 20;
+    MargenL = 20;
+} else if (Pasada1 = "Martin") {
+    MargenA = 20;
+    MargenL = 20;
+} else if (Pasada1 = "Nada") {
+    MargenA = 0;
+    MargenL = 0;
+} else if (Pasada1 = "ManipuladoExterno") {
+    MargenA = 20;
+    MargenL = 20;
+} else {
+    MargenA = 0;
+    MargenL = 0;
+};
+
+////////////////////////////////////////////////////////////////////////
+
+/* if (Pasada1a) {
+    
+} else if (condition) {
+    
+} else if () {
+    
+} else {
+    
+} */
+let MedidasUnitarias;
+
+if (AnchoTotal > 0 && LargoTotal > 0) {
+    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
+    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
+    MedidasUnitarias = `Medias Unitarias: ${AnchoTotal} x ${LargoTotal}` +
+    `Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm`;
+} else {
+    MedidasUnitarias = ``;
+}
+console.log(MedidasUnitarias);
+console.log(Pasada1);
+///////////////////////////////////////////////////////////////////////////
 
 const CosteSubcontratacion = document.getElementById('CosteSubcontratacion').value;
 
