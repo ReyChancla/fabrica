@@ -300,8 +300,9 @@ let MedidasUnitarias;
 if (AnchoTotal > 0 && LargoTotal > 0) {
     const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
     const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
+    const MultiplicaPoses = PosesAncho * PosesLargo;
     MedidasUnitarias = `Medias Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
-Nº de poses: ${PosesAncho} x ${PosesLargo}.
+Nº de poses: ${MultiplicaPoses} (${PosesAncho} x ${PosesLargo}).
 Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.`;
 } else {
     MedidasUnitarias = ``;
@@ -368,8 +369,7 @@ if (NotasComerciales) {
    notas = MedidasUnitarias + `
 Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.
 ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
-`${CosteTroquel}${CosteCliche}${ComentarioComerciales2}
-`;
+`${CosteTroquel}${CosteCliche}${ComentarioComerciales2}`;
 } else {
     notas = ``;
 }
@@ -382,7 +382,6 @@ ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
     `${PresupuestosSubcontratacion2}${EstudioCape2}`+
     `${EstudioOneA2}${ModificacionArticulo2}${ComentarioDiseno2}`+
     `${notas}
-
 **************************************************`;
 }
 
