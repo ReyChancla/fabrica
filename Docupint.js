@@ -296,8 +296,7 @@ if (AnchoTotal > 0 && LargoTotal > 0) {
     const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
     MedidasUnitarias = `Medias Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
 Nº de poses: ${PosesAncho} x ${PosesLargo}.
-Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.
-Ruta: UP1`;
+Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.`;
 } else {
     MedidasUnitarias = ``;
 }
