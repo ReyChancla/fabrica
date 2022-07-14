@@ -381,7 +381,8 @@ ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
     `${MuestrasColor}${AnalisisCalidad2}`+
     `${PresupuestosSubcontratacion2}${EstudioCape2}`+
     `${EstudioOneA2}${ModificacionArticulo2}${ComentarioDiseno2}`+
-    `${notas}
+    `
+    ${notas}
 **************************************************`;
 }
 
