@@ -240,6 +240,8 @@ let Pasada1 = document.getElementById('Pasada1').value;
 let Pasada2 = document.getElementById('Pasada2').value;
 let Pasada3 = document.getElementById('Pasada3').value;
 
+console.log(Pasada1);
+
 let MargenA;
 let MargenL;
 
@@ -266,9 +268,13 @@ if (Pasada1 === "DF") {
     MargenL = 0;
 };
 
-if (Pasada1 === "Nada" || Pasada2 === "Nada" || Pasada3 === "Nada") {
+if (Pasada1 === "Nada") {
     Pasada1 = ``;
+}
+if (Pasada2 === "Nada") {
     Pasada2 = ``;
+}
+if (Pasada3 === "Nada") {
     Pasada3 = ``;
 }
 ////////////////////////////////////////////////////////////////////////
@@ -367,7 +373,6 @@ ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
 } else {
     notas = ``;
 }
-
 //////////////////////////////////////////////////////////
 //Cadena de texto
 //////////////////////////////////////////////////////////
