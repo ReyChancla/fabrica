@@ -155,7 +155,7 @@ MuestrasColor = ``;
  const ModificacionArticulo = document.getElementById("ModificacionArticulo").checked;
     let AnalisisCalidad2;
     if (AnalisisCalidad) {
-        AnalisisCalidad2 = `Se realiza analisis de calidad.
+        AnalisisCalidad2 = `Se realiza análisis de calidad.
 `; 
     } else {
         AnalisisCalidad2 = ``;
@@ -322,7 +322,7 @@ if (CosteSubcontratacion > 0) {
 
 let NumeroTintas = document.getElementById('NumeroTintas').value;
 if (NumeroTintas > 0) {
-    NumeroTintas = `Numero de Tintas: ${NumeroTintas}€.
+    NumeroTintas = `Numero de Tintas: ${NumeroTintas}.
 `;
 } else {
     NumeroTintas = ``;
@@ -366,7 +366,7 @@ if (ComentarioComercial === "Comentarios") {
 let notas;
 if (NotasComerciales) {
    notas = MedidasUnitarias + `
-Ruta: UP1/${Pasada1}/${Pasada2}/${Pasada3}.
+Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.
 ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
 `${CosteTroquel}${CosteCliche}${ComentarioComerciales2}
 `;
