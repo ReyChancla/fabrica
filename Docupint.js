@@ -366,7 +366,7 @@ if (ComentarioComercial === "Comentarios") {
 
 let notas;
 if (NotasComerciales) {
-   notas = MedidasUnitarias + `
+   notas = MedidasInternas + MedidasUnitarias + `
 Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.
 ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
 `${CosteTroquel}${CosteCliche}${ComentarioComerciales2}`;
