@@ -301,7 +301,7 @@ if (AnchoTotal > 0 && LargoTotal > 0) {
     const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
     const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
     const MultiplicaPoses = PosesAncho * PosesLargo;
-    MedidasUnitarias = `Medias Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
+    MedidasUnitarias = `Medidas Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
 Nº de poses: ${MultiplicaPoses} (${PosesAncho} x ${PosesLargo}).
 Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.`;
 } else {
