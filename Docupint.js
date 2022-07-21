@@ -252,17 +252,18 @@ if (Pasada1 === "DF") {
     MargenA = 25;
     MargenL = 20;
 } else if (Pasada1 === "Curioni") {
-    MargenA = 20;
-    MargenL = 20;
+    MargenA = 0;
+    MargenL = 0;
 } else if (Pasada1 === "Martin") {
-    MargenA = 20;
-    MargenL = 20;
+    MargenA = 0;
+    MargenL = 0;
 } else if (Pasada1 === "Nada") {
     MargenA = 0;
     MargenL = 0;
 } else if (Pasada1 === "ManipuladoExterno") {
     MargenA = 20;
     MargenL = 20;
+    alert("Seguro que tiene la sangre correcta, tiene 10mm por cada lado.")
 } else {
     MargenA = 0;
     MargenL = 0;
@@ -366,12 +367,12 @@ if (ComentarioComercial === "Comentarios") {
 
 let notas;
 if (NotasComerciales) {
-   notas = MedidasInternas + MedidasUnitarias + `
+    notas = ``;
+} else {
+notas = MedidasInternas + MedidasUnitarias + `
 Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.
 ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
 `${CosteTroquel}${CosteCliche}${ComentarioComerciales2}`;
-} else {
-    notas = ``;
 }
 //////////////////////////////////////////////////////////
 //Cadena de texto
