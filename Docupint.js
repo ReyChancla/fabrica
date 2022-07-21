@@ -304,7 +304,8 @@ if (AnchoTotal > 0 && LargoTotal > 0) {
     const MultiplicaPoses = PosesAncho * PosesLargo;
     MedidasUnitarias = `Medidas Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
 Nº de poses: ${MultiplicaPoses} (${PosesAncho} x ${PosesLargo}).
-Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.`;
+Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.
+Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.`;
 } else {
     MedidasUnitarias = ``;
 }
@@ -370,7 +371,6 @@ if (NotasComerciales) {
     notas = ``;
 } else {
 notas = MedidasInternas + MedidasUnitarias + `
-Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.
 ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
 `${CosteTroquel}${CosteCliche}${ComentarioComerciales2}`;
 }
