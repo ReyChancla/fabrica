@@ -11,6 +11,11 @@ function fecha() {
 }
 
 function crear() {
+
+    document.getElementById("textareaCopy").innerHTML = 
+    `<textarea id="contenedor" class="textarea"></textarea><br>
+    <input type="button" value="Copy" onclick="copiar()">`;
+
     const { formatofecha, year } = fecha();
     const Manuel = document.getElementById("Manuel").checked;
     const Raquel = document.getElementById("Raquel").checked;
@@ -42,7 +47,7 @@ function crear() {
     } else {
         name = "OT - " + formatofecha + " - " + WebCenter + `
 `;
-        alert("Se te ha olvidado identificarte,Gracias por hacerlo ¡ya!");
+        alert("Se te ha olvidado identificarte. ¡Gracias por hacerlo ya!");
     }
     //////////////////////////////////////////////////////////
     //Estructural
@@ -50,13 +55,14 @@ function crear() {
     const MuestraEstructural = document.getElementById("MuestraEstructural").checked;
     const InfoEstructural = document.getElementById("InfoEstructural").checked;
     const Docupoint = document.getElementById("Docupoint").value;
+    const DocupointVersion = document.getElementById("DocupointVersion").value;
     
 let Estructural;
 if (MuestraEstructural) {
-    Estructural = "Estructural " + Docupoint +  " según muestra." + `
+    Estructural = "Estructural " + "DSS-LUCENA-" +Docupoint + "-22_" + DocupointVersion + " según muestra." + `
 `; 
 } else if (InfoEstructural){
-    Estructural = "Estructural " + Docupoint +  " según información." + `
+    Estructural = "Estructural " + "DSS-LUCENA-" +Docupoint + "-22_" + DocupointVersion + " según información." + `
 `; 
 } else if (NadaEstructural){
     Estructural = ``; 
@@ -73,23 +79,24 @@ const Pantone = document.getElementById("Pantone").checked;
 const PropuestaInterna = document.getElementById("PropuestaInterna").checked;
 const NadaGrafico = document.getElementById("NadaGrafico").checked;
 const DisenoGrafico = document.getElementById("DisenoGrafico").value;
+const DisenoGraficoVersion = document.getElementById("DisenoGraficoVersion").value;
 
 let GraficoColor;
 
 if (SegunMuestra) {
-    GraficoColor = "Gráfico " + DisenoGrafico + " según muestra." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según muestra." + `
 `; 
 } else if (ReferenciasActivas){
-    GraficoColor = "Gráfico " + DisenoGrafico + " según referencias activas." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según referencias activas." + `
 `; 
 } else if (GCMI){
-    GraficoColor = "Gráfico " + DisenoGrafico + " según GCMI." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según GCMI." + `
 `; 
 } else if (Pantone){
-    GraficoColor = "Gráfico " + DisenoGrafico + " según Pantone del cliente." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según Pantone del cliente." + `
 `; 
 } else if (PropuestaInterna){
-    GraficoColor = "Gráfico " + DisenoGrafico + " según propuesta interna." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según propuesta interna." + `
 `; 
 }else if (NadaGrafico){
     GraficoColor = ``; 
@@ -292,13 +299,27 @@ if (Pasada3 === "Nada") {
 
 
 
-const NotasComerciales = document.getElementById('NotasComerciales').checked;
+
 
 
 
 let MedidasUnitarias;
 
-if (AnchoTotal > 0 && LargoTotal > 0) {
+if (AnchoTotal > 0 && LargoTotal > 0 && Pasada1 === "Martin") {
+    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
+    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
+    const MultiplicaPoses = PosesAncho * PosesLargo;
+    MedidasUnitarias = `Medidas Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
+Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.
+Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.`;
+} else if (AnchoTotal > 0 && LargoTotal > 0 && Pasada1 === "Curioni") {
+    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
+    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
+    const MultiplicaPoses = PosesAncho * PosesLargo;
+    MedidasUnitarias = `Medidas Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
+Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.
+Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.`;
+} else if (AnchoTotal > 0 && LargoTotal > 0) {
     const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
     const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
     const MultiplicaPoses = PosesAncho * PosesLargo;
@@ -365,15 +386,6 @@ if (ComentarioComercial === "Comentarios") {
 `;
 }
 
-
-let notas;
-if (NotasComerciales) {
-    notas = ``;
-} else {
-notas = MedidasInternas + MedidasUnitarias + `
-${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
-`${CosteTroquel}${CosteCliche}${ComentarioComerciales2}`;
-}
 //////////////////////////////////////////////////////////
 //Cadena de texto
 //////////////////////////////////////////////////////////
@@ -382,9 +394,14 @@ ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
     `${MuestrasColor}${AnalisisCalidad2}`+
     `${PresupuestosSubcontratacion2}${EstudioCape2}`+
     `${EstudioOneA2}${ModificacionArticulo2}${ComentarioDiseno2}`+
-    `
-${notas}
+
+    MedidasInternas + MedidasUnitarias + `
+    ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
+    `${CosteTroquel}${CosteCliche}${ComentarioComerciales2}
 **************************************************`;
+
+
+
 }
 
 

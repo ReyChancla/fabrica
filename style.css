@@ -260,3 +260,18 @@ footer p{
 
 
 
+.gris div {
+  background: #81818127;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+/* .gris h1, h3 {
+  background: #fc4b1a1c;
+}
+
+.gris h2 {
+  background: #a8a8a82f;
+  padding: 5px;
+} */
