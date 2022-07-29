@@ -55,14 +55,19 @@ function crear() {
     const MuestraEstructural = document.getElementById("MuestraEstructural").checked;
     const InfoEstructural = document.getElementById("InfoEstructural").checked;
     const Docupoint = document.getElementById("Docupoint").value;
-    const DocupointVersion = document.getElementById("DocupointVersion").value;
+    let DocupointVersion = document.getElementById("DocupointVersion").value;
     
+    if (DocupointVersion > 0) {
+        DocupointVersion = "_" + document.getElementById("DocupointVersion").value;
+    } else {
+        DocupointVersion = ``;
+    }
 let Estructural;
 if (MuestraEstructural) {
-    Estructural = "Estructural " + "DSS-LUCENA-" +Docupoint + "-22_" + DocupointVersion + " según muestra." + `
+    Estructural = "Estructural " + "DSS-LUCENA-" +Docupoint + "-22" + DocupointVersion + " según muestra." + `
 `; 
 } else if (InfoEstructural){
-    Estructural = "Estructural " + "DSS-LUCENA-" +Docupoint + "-22_" + DocupointVersion + " según información." + `
+    Estructural = "Estructural " + "DSS-LUCENA-" +Docupoint + "-22" + DocupointVersion + " según información." + `
 `; 
 } else if (NadaEstructural){
     Estructural = ``; 
@@ -79,24 +84,30 @@ const Pantone = document.getElementById("Pantone").checked;
 const PropuestaInterna = document.getElementById("PropuestaInterna").checked;
 const NadaGrafico = document.getElementById("NadaGrafico").checked;
 const DisenoGrafico = document.getElementById("DisenoGrafico").value;
-const DisenoGraficoVersion = document.getElementById("DisenoGraficoVersion").value;
+let DisenoGraficoVersion = document.getElementById("DisenoGraficoVersion").value;
+
+if (DisenoGraficoVersion === ``) {
+    DisenoGraficoVersion = ``;
+} else {
+    DisenoGraficoVersion = "-" + document.getElementById("DisenoGraficoVersion").value;
+}
 
 let GraficoColor;
 
 if (SegunMuestra) {
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según muestra." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según muestra." + `
 `; 
 } else if (ReferenciasActivas){
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según referencias activas." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según referencias activas." + `
 `; 
 } else if (GCMI){
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según GCMI." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según GCMI." + `
 `; 
 } else if (Pantone){
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según Pantone del cliente." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según Pantone del cliente." + `
 `; 
 } else if (PropuestaInterna){
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + "-" + DisenoGraficoVersion + " según propuesta interna." + `
+    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según propuesta interna." + `
 `; 
 }else if (NadaGrafico){
     GraficoColor = ``; 
@@ -243,9 +254,13 @@ const LargoTotal = document.getElementById('LargoTotal').value;
 const PosesAncho = document.getElementById('PosesAncho').value;
 const PosesLargo = document.getElementById('PosesLargo').value;
 
+let Pasada0 = document.getElementById('Pasada0').value;
 let Pasada1 = document.getElementById('Pasada1').value;
 let Pasada2 = document.getElementById('Pasada2').value;
 let Pasada3 = document.getElementById('Pasada3').value;
+let Pasada4 = document.getElementById('Pasada4').value;
+let Pasada5 = document.getElementById('Pasada5').value;
+let Pasada6 = document.getElementById('Pasada6').value;
 
 console.log(Pasada1);
 
@@ -284,6 +299,15 @@ if (Pasada2 === "Nada") {
 }
 if (Pasada3 === "Nada") {
     Pasada3 = ``;
+}
+if (Pasada4 === "Nada") {
+    Pasada4 = ``;
+}
+if (Pasada5 === "Nada") {
+    Pasada5 = ``;
+}
+if (Pasada6 === "Nada") {
+    Pasada6 = ``;
 }
 ////////////////////////////////////////////////////////////////////////
 
@@ -326,7 +350,7 @@ Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.`;
     MedidasUnitarias = `Medidas Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
 Nº de poses: ${MultiplicaPoses} (${PosesAncho} x ${PosesLargo}).
 Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.
-Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.`;
+Ruta: ${Pasada0}/${Pasada1}/${Pasada2}/${Pasada3}/${Pasada4}/${Pasada5}/${Pasada6}.`;
 } else {
     MedidasUnitarias = ``;
 }

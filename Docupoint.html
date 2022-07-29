@@ -34,7 +34,7 @@
                     <div>
                         <p>Número de .ARD</p>
                         <input type="number" name="Docupoint" id="Docupoint" placeholder="Nº de ARD">
-                        <input type="text" name="Docupoint" id="DocupointVersion" placeholder="Versión">
+                        <input type="text" pattern="^[A-Za-z]+$" name="Docupoint" id="DocupointVersion" placeholder="Versión" required>
                     </div>
                     <input type="radio" name="Estructural" id="MuestraEstructural">
                     <label for="MuestraEstructural">Según muestra</label>
@@ -225,7 +225,7 @@
                         <input type="number" id="PosesLargo" value="1">
                     </div>
                     <div>
-                        <h3>Ruta de fabricación: UP1/</h3><br>
+                        <h3>Ruta de fabricación:</h3><br>
                         <select id="Pasada0">
                             <option value="OND">Onduladora</option>
                             <option value="DF">Dong Fang</option>
@@ -235,7 +235,7 @@
                             <option value="Pegadora">Pegadora</option>
                             <option value="ManipuladoExterno">Manipulado externo</option>
                             <option value="Plotter">Plotter</option>
-                        </select>
+                        </select><br><br>
                         <select id="Pasada1">
                             <option value="Nada">1ª pasada</option>
                             <option value="DF">Dong Fang</option>
@@ -264,9 +264,29 @@
                             <option value="Pegadora">Pegadora</option>
                             <option value="ManipuladoExterno">Manipulado externo</option>
                             <option value="Plotter">Plotter</option>
-                        </select>
+                        </select><br><br>
                         <select id="Pasada4">
                             <option value="Nada">4ª pasada</option>
+                            <option value="DF">Dong Fang</option>
+                            <option value="Bobst">Bobst</option>
+                            <option value="Curioni">Curioni</option>
+                            <option value="Martin">Martin</option>
+                            <option value="Pegadora">Pegadora</option>
+                            <option value="ManipuladoExterno">Manipulado externo</option>
+                            <option value="Plotter">Plotter</option>
+                        </select>
+                        <select id="Pasada5">
+                            <option value="Nada">5ª pasada</option>
+                            <option value="DF">Dong Fang</option>
+                            <option value="Bobst">Bobst</option>
+                            <option value="Curioni">Curioni</option>
+                            <option value="Martin">Martin</option>
+                            <option value="Pegadora">Pegadora</option>
+                            <option value="ManipuladoExterno">Manipulado externo</option>
+                            <option value="Plotter">Plotter</option>
+                        </select>
+                        <select id="Pasada6">
+                            <option value="Nada">6ª pasada</option>
                             <option value="DF">Dong Fang</option>
                             <option value="Bobst">Bobst</option>
                             <option value="Curioni">Curioni</option>

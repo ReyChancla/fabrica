@@ -267,10 +267,11 @@ footer p{
   border-radius: 10px;
 }
 
-/* .gris h1, h3 {
-  background: #fc4b1a1c;
+.gris h4, h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-
+/*
 .gris h2 {
   background: #a8a8a82f;
   padding: 5px;
