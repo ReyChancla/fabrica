@@ -99,15 +99,16 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
+input[type="number"], [type="text"] {
   height: 30px;
-  width: 90px;
+  width: 100px;
   -moz-appearance: textfield;
   border-radius: 10px;
   text-align: center;
   font-weight: bold;
   border: 3px solid #fc4a1a;
 }
+
 /*--------------------------------------------*/
 
 label {
@@ -258,21 +259,42 @@ footer p{
                         Pruebas
 ----------------------------------------------------*/
 
+.gris{
+  padding: 2em;
+}
 
-
-.gris div {
+.gris .bloque {
   background: #81818127;
   padding: 5px;
   margin-bottom: 5px;
   border-radius: 10px;
 }
-
-.gris h4, h3 {
+.gris h4, h3{
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.bloque .h3{
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+
 /*
 .gris h2 {
   background: #a8a8a82f;
   padding: 5px;
 } */
+
+.gris .contenido{
+  height: 0;
+  padding: 0em;
+  overflow: hidden;
+  transition: all .0s ease;
+}
+
+.gris .bloque.activo .contenido{
+  height: 100%;
+}

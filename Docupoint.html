@@ -14,56 +14,78 @@
         <h1>Docupoint</h1>
         <div class ="wrap">
             <div class ="gris">
-                <div>
-                    <h3>Nombre del técnico</h3>
-                    <input type="radio" name="Nombre" id="Manuel">
-                    <label for="Manuel">Manuel</label>
-                    <input type="radio" name="Nombre" id="Raquel">
-                    <label for="Raquel">Raquel</label>
-                    <input type="radio" name="Nombre" id="Amador">
-                    <label for="Amador">Amador</label>
-                    <input type="radio" name="Nombre" id="Marco">
-                    <label for="Marco">Marco</label>
-                    <input type="radio" name="Nombre" id="Fran">
-                    <label for="Fran">Francisco</label>
-                </div>
-                <input type="text" name="WebCenter" id="WebCenter" placeholder="Nº de Web Center">               
-                <br><br>
-                <h3>Diseño estructural:</h3>
-                <div>
-                    <div>
-                        <p>Número de .ARD</p>
-                        <input type="number" name="Docupoint" id="Docupoint" placeholder="Nº de ARD">
-                        <input type="text" pattern="^[A-Za-z]+$" name="Docupoint" id="DocupointVersion" placeholder="Versión" required>
+                <div class="bloque activo">
+                    <h3 class="h3">Nombre del técnico</h3>
+                    <div class="contenido">
+                        <input type="radio" name="Nombre" id="Manuel">
+                        <label for="Manuel">Manuel</label>
+                        <input type="radio" name="Nombre" id="Raquel">
+                        <label for="Raquel">Raquel</label>
+                        <input type="radio" name="Nombre" id="Amador">
+                        <label for="Amador">Amador</label>
+                        <input type="radio" name="Nombre" id="Marco">
+                        <label for="Marco">Marco</label>
+                        <input type="radio" name="Nombre" id="Fran">
+                        <label for="Fran">Francisco</label>
                     </div>
-                    <input type="radio" name="Estructural" id="MuestraEstructural">
-                    <label for="MuestraEstructural">Según muestra</label>
-                    <input type="radio" name="Estructural" id="InfoEstructural">
-                    <label for="InfoEstructural">Según información</label>
-                    <input type="radio" name="Estructural" id="NadaEstructural">
-                    <label for="NadaEstructural">Sin estructural</label>
                 </div>
-                <h3>Diseño gráfico:</h3>
-                <div>
-                    <div>
-                        <p>Número del gráfico</p>
-                        <input type="number" name="DisenoGrafico" id="DisenoGrafico" placeholder="Nº del gráfico">
+              <!--   <input type="text" name="WebCenter" id="WebCenter" placeholder="Nº de Web Center">               
+                <br><br> -->
+                <div class="bloque">
+                    <h3 class="h3">Diseño estructural:</h3>
+                    <div class="contenido">
+                        <p>DSS-LUCENA- 
+                        <input type="number" name="Docupoint" id="Docupoint" placeholder="Nº de ARD"> _ 
+                        <input type="text" name="Docupoint" id="DocupointVersion" placeholder="Versión">
+                        </p>
+                        <div>
+                            <input type="radio" name="Estructural" id="MuestraEstructural">
+                            <label for="MuestraEstructural">Según muestra</label>
+                            <input type="radio" name="Estructural" id="InfoEstructural">
+                            <label for="InfoEstructural">Según información</label>
+                            <input type="radio" name="Estructural" id="NadaEstructural">
+                            <label for="NadaEstructural">Sin estructural</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bloque">
+                    <h3 class="h3">Diseño gráfico:</h3>
+                    <div class="contenido">
+                        <p>G-2022 -
+                        <input type="number" name="DisenoGrafico" id="DisenoGrafico" placeholder="Nº del gráfico"> - 
                         <input type="number" name="DisenoGrafico" id="DisenoGraficoVersion" placeholder="Versión">
-                    </div><br>
-                    <input type="radio" name="GraficoColor" id="SegunMuestra">
-                    <label for="SegunMuestra">Según muestra</label>
-                    <input type="radio" name="GraficoColor" id="ReferenciasActivas">
-                    <label for="ReferenciasActivas">Referencias activas</label>
-                    <input type="radio" name="GraficoColor" id="GCMI">
-                    <label for="GCMI">GCMI</label>
-                    <input type="radio" name="GraficoColor" id="Pantone">
-                    <label for="Pantone">Pantone</label>
-                    <input type="radio" name="GraficoColor" id="PropuestaInterna">
-                    <label for="PropuestaInterna">Propuesta interna</label>
-                    <input type="radio" name="GraficoColor" id="NadaGrafico">
-                    <label for="NadaGrafico">Sin gráfico</label>
+                        </p>
+                        <div>
+                            <div>
+                                <input type="radio" name="Grafico" id="MuestraGrafico">
+                                <label for="MuestraGrafico">Según muestra</label>
+                                <input type="radio" name="Grafico" id="InfoGrafico">
+                                <label for="InfoGrafico">Según información</label>
+                                <input type="radio" name="Grafico" id="NadaGrafico">
+                                <label for="NadaGrafico">Sin grafico</label>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Datos de color:</h3>
+                            <div>
+                                <input type="radio" name="GraficoColor" id="SegunMuestra">
+                                <label for="SegunMuestra">Según muestra</label>
+                                <input type="radio" name="GraficoColor" id="ReferenciasActivas">
+                                <label for="ReferenciasActivas">Referencias activas</label>
+                                <input type="radio" name="GraficoColor" id="GCMI">
+                                <label for="GCMI">GCMI</label>
+                                <input type="radio" name="GraficoColor" id="Pantone">
+                                <label for="Pantone">Pantone</label>
+                                <input type="radio" name="GraficoColor" id="PropuestaInterna">
+                                <label for="PropuestaInterna">Propuesta interna</label>
+                                <input type="radio" name="GraficoColor" id="NadaColor">
+                                <label for="NadaGrafico">Sin color</label>
+                            </div>
+                        </div>
+                    </div>
+                        
                 </div>
-                <h3>Prototipos creadas y/o enviados:</h3>
+                <h3 class="h3">Prototipos creadas y/o enviados:</h3>
                 <div>
                     <input type="radio" name="MuestrasEnviadas" id="MuestrasCortadas">
                     <label for="MuestrasCortadas">Cortadas</label>
@@ -78,102 +100,102 @@
                         <option value="B06TC0L">B06TC0L</option>
                         <option value="B06TCTC0L">B06TCTC0L</option>
                         <option value="B07TC0L">B07TC0L</option>
-                            <option value="B08T0L">B08T0L</option>
-                            <option value="B11TCTC0L">B11TCTC0L</option>
-                            <option value="B12TC0L">B12TC0L</option>
-                            <option value="B14T0L">B14T0L</option>
-                            <option value="B14TC0L">B14TC0L</option>
-                            <option value="B15TDTC1L">B15TDTC1L</option>
-                            <option value="B16TDV1L">B16TDV1L</option>
-                            <option value="B16VV0L">B16VV0L</option>
-                            <option value="B20KBV0L">B20KBV0L</option>
-                            <option value="B22VV0L">B22VV0L</option>
-                            <option value="B23KK1L">B23KK1L</option>
-                            <option value="B25KK0L">B25KK0L</option>
-                            <option value="BC23TC0L">BC23TC0L</option>
-                            <option value="BC24T0L">BC24T0L</option>
-                            <option value="BC34VV0L">BC34VV0L</option>
-                            <option value="BC37KBV0L">BC37KBV0L</option>
-                            <option value="BC37M1L">BC37M1L</option>
-                            <option value="BC37PEKA1L">BC37PEKA1L</option>
-                            <option value="BC60KBV0L">BC60KBV0L</option>
-                            <option value="BC60VV0L">BC60VV0L</option>
-                            <option value="BC65KBK2L">BC65KBK2L</option>
-                            <option value="BC65KK2L">BC65KK2L</option>
-                            <option value="BC66KGK2L">BC66KGK2L</option>
-                            <option value="BC68KBK2L">BC68KBK2L</option>
-                            <option value="BC68KK2L">BC68KK2L</option>
-                            <option value="BC69KGK2L">BC69KGK2L</option>
-                            <option value="BC70KBK2L">BC70KBK2L</option>
-                            <option value="BC70KGK2L">BC70KGK2L</option>
-                            <option value="BC71KGK2L">BC71KGK2L</option>
-                            <option value="BC72KGK2L">BC72KGK2L</option>
-                            <option value="BC73KK2L">BC73KK2L</option>
-                            <option value="BC74KGK2L">BC74KGK2L</option>
-                            <option value="BC75KBK2L">BC75KBK2L</option>
-                            <option value="BC75KK2L">BC75KK2L</option>
-                            <option value="BC77KGK2L">BC77KGK2L</option>
-                            <option value="BC78KK2L">BC78KK2L</option>
-                            <option value="BC81KK1L">BC81KK1L</option>
-                            <option value="BC92KK1L">BC92KK1L</option>
-                            <option value="C08TC0L">C08TC0L</option>
-                            <option value="C10T0L">C10T0L</option>
-                            <option value="C11PEKA1L">C11PEKA1L</option>
-                            <option value="C13VV0L">C13VV0L</option>
-                            <option value="C17TC0L">C17TC0L</option>
-                            <option value="C19M1L">C19M1L</option>
-                            <option value="C19T0L">C19T0L</option>
-                            <option value="C22M0L">C22M0L</option>
-                            <option value="C23T0L">C23T0L</option>
-                            <option value="C25KBKB1L">C25KBKB1L</option>
-                            <option value="C25M1L">C25M1L</option>
-                            <option value="C25V1L">C25V1L</option>
-                            <option value="C26KBK1L">C26KBK1L</option>
-                            <option value="C26KBV0L">C26KBV0L</option>
-                            <option value="C26M1L">C26M1L</option>
-                            <option value="C28T1L">C28T1L</option>
-                            <option value="C29KK1L">C29KK1L</option>
-                            <option value="C29VV1L">C29VV1L</option>
-                            <option value="C32KB1L">C32KB1L</option>
-                            <option value="C42KB1L">C42KB1L</option>
-                            <option value="C43K1L">C43K1L</option>
-                            <option value="C45KK1L">C45KK1L</option>
-                            <option value="E07T0L">E07T0L</option>
-                            <option value="E07TC1L">E07TC1L</option>
-                            <option value="E08TD1L">E08TD1L</option>
-                            <option value="E08TDTC1L">E08TDTC1L</option>
-                            <option value="E08VV0L">E08VV0L</option>
-                            <option value="E09KBTC0L">E09KBTC0L</option>
-                            <option value="E09KBV0L">E09KBV0L</option>
-                            <option value="E11KB1L">E11KB1L</option>
-                            <option value="E11KK0L">E11KK0L</option>
-                            <option value="E13KGKG1L">E13KGKG1L</option>
-                            <option value="E16VV1L">E16VV1L</option>
-                            <option value="EB24VV0L">EB24VV0L</option>
-                            <option value="EB26KGK1L">EB26KGK1L</option>
-                            <option value="EB26TCK1L">EB26TCK1L</option>
-                            <option value="EB30KBV0L">EB30KBV0L</option>
-                            <option value="EB35TCTC1L">EB35TCTC1L</option>
-                            <option value="EB40KBTC0L">EB40KBTC0L</option>
-                            <option value="EB40KGKG1L">EB40KGKG1L</option>
-                            <option value="EB41KK1L">EB41KK1L</option>
-                            <option value="EB47VV0L">EB47VV0L</option>
-                            <option value="EB50KK2L">EB50KK2L</option>
-                            <option value="EB50VV1L">EB50VV1L</option>
-                            <option value="EB51KBK2L">EB51KBK2L</option>
-                            <option value="EB51KK2L">EB51KK2L</option>
-                            <option value="EB52KGK2L">EB52KGK2L</option>
-                            <option value="EB53KBK2L">EB53KBK2L</option>
-                            <option value="EB53KGK2L">EB53KGK2L</option>
-                            <option value="EB53KK2L">EB53KK2L</option>
-                            <option value="EB54KGK2L">EB54KGK2L</option>
-                            <option value="EB57KK2L">EB57KK2L</option>
+                        <option value="B08T0L">B08T0L</option>
+                        <option value="B11TCTC0L">B11TCTC0L</option>
+                        <option value="B12TC0L">B12TC0L</option>
+                        <option value="B14T0L">B14T0L</option>
+                        <option value="B14TC0L">B14TC0L</option>
+                        <option value="B15TDTC1L">B15TDTC1L</option>
+                        <option value="B16TDV1L">B16TDV1L</option>
+                        <option value="B16VV0L">B16VV0L</option>
+                        <option value="B20KBV0L">B20KBV0L</option>
+                        <option value="B22VV0L">B22VV0L</option>
+                        <option value="B23KK1L">B23KK1L</option>
+                        <option value="B25KK0L">B25KK0L</option>
+                        <option value="BC23TC0L">BC23TC0L</option>
+                        <option value="BC24T0L">BC24T0L</option>
+                        <option value="BC34VV0L">BC34VV0L</option>
+                        <option value="BC37KBV0L">BC37KBV0L</option>
+                        <option value="BC37M1L">BC37M1L</option>
+                        <option value="BC37PEKA1L">BC37PEKA1L</option>
+                        <option value="BC60KBV0L">BC60KBV0L</option>
+                        <option value="BC60VV0L">BC60VV0L</option>
+                        <option value="BC65KBK2L">BC65KBK2L</option>
+                        <option value="BC65KK2L">BC65KK2L</option>
+                        <option value="BC66KGK2L">BC66KGK2L</option>
+                        <option value="BC68KBK2L">BC68KBK2L</option>
+                        <option value="BC68KK2L">BC68KK2L</option>
+                        <option value="BC69KGK2L">BC69KGK2L</option>
+                        <option value="BC70KBK2L">BC70KBK2L</option>
+                        <option value="BC70KGK2L">BC70KGK2L</option>
+                        <option value="BC71KGK2L">BC71KGK2L</option>
+                        <option value="BC72KGK2L">BC72KGK2L</option>
+                        <option value="BC73KK2L">BC73KK2L</option>
+                        <option value="BC74KGK2L">BC74KGK2L</option>
+                        <option value="BC75KBK2L">BC75KBK2L</option>
+                        <option value="BC75KK2L">BC75KK2L</option>
+                        <option value="BC77KGK2L">BC77KGK2L</option>
+                        <option value="BC78KK2L">BC78KK2L</option>
+                        <option value="BC81KK1L">BC81KK1L</option>
+                        <option value="BC92KK1L">BC92KK1L</option>
+                        <option value="C08TC0L">C08TC0L</option>
+                        <option value="C10T0L">C10T0L</option>
+                        <option value="C11PEKA1L">C11PEKA1L</option>
+                        <option value="C13VV0L">C13VV0L</option>
+                        <option value="C17TC0L">C17TC0L</option>
+                        <option value="C19M1L">C19M1L</option>
+                        <option value="C19T0L">C19T0L</option>
+                        <option value="C22M0L">C22M0L</option>
+                        <option value="C23T0L">C23T0L</option>
+                        <option value="C25KBKB1L">C25KBKB1L</option>
+                        <option value="C25M1L">C25M1L</option>
+                        <option value="C25V1L">C25V1L</option>
+                        <option value="C26KBK1L">C26KBK1L</option>
+                        <option value="C26KBV0L">C26KBV0L</option>
+                        <option value="C26M1L">C26M1L</option>
+                        <option value="C28T1L">C28T1L</option>
+                        <option value="C29KK1L">C29KK1L</option>
+                        <option value="C29VV1L">C29VV1L</option>
+                        <option value="C32KB1L">C32KB1L</option>
+                        <option value="C42KB1L">C42KB1L</option>
+                        <option value="C43K1L">C43K1L</option>
+                        <option value="C45KK1L">C45KK1L</option>
+                        <option value="E07T0L">E07T0L</option>
+                        <option value="E07TC1L">E07TC1L</option>
+                        <option value="E08TD1L">E08TD1L</option>
+                        <option value="E08TDTC1L">E08TDTC1L</option>
+                        <option value="E08VV0L">E08VV0L</option>
+                        <option value="E09KBTC0L">E09KBTC0L</option>
+                        <option value="E09KBV0L">E09KBV0L</option>
+                        <option value="E11KB1L">E11KB1L</option>
+                        <option value="E11KK0L">E11KK0L</option>
+                        <option value="E13KGKG1L">E13KGKG1L</option>
+                        <option value="E16VV1L">E16VV1L</option>
+                        <option value="EB24VV0L">EB24VV0L</option>
+                        <option value="EB26KGK1L">EB26KGK1L</option>
+                        <option value="EB26TCK1L">EB26TCK1L</option>
+                        <option value="EB30KBV0L">EB30KBV0L</option>
+                        <option value="EB35TCTC1L">EB35TCTC1L</option>
+                        <option value="EB40KBTC0L">EB40KBTC0L</option>
+                        <option value="EB40KGKG1L">EB40KGKG1L</option>
+                        <option value="EB41KK1L">EB41KK1L</option>
+                        <option value="EB47VV0L">EB47VV0L</option>
+                        <option value="EB50KK2L">EB50KK2L</option>
+                        <option value="EB50VV1L">EB50VV1L</option>
+                        <option value="EB51KBK2L">EB51KBK2L</option>
+                        <option value="EB51KK2L">EB51KK2L</option>
+                        <option value="EB52KGK2L">EB52KGK2L</option>
+                        <option value="EB53KBK2L">EB53KBK2L</option>
+                        <option value="EB53KGK2L">EB53KGK2L</option>
+                        <option value="EB53KK2L">EB53KK2L</option>
+                        <option value="EB54KGK2L">EB54KGK2L</option>
+                        <option value="EB57KK2L">EB57KK2L</option>
                     </select>
                     <input type="radio" name="MuestrasEnviadas" id="SinMuestrasCortadas">
                     <label for="SinMuestrasCortadas">Sin muestras</label>
                     </div>
 
-                    <h3>Prototipo de color</h3>
+                    <h3 class="h3">Prototipo de color</h3>
                     <div>
                         <input type="radio" name="MuestrasColor" id="PruebaColor">
                         <label for="PruebaColor">Prueba de color</label>
@@ -185,7 +207,7 @@
                         <label for="SinMuestraColor">Sin muestra de color</label>
                     </div>
 
-                    <h3>Estudios y otros procesos</h3>
+                    <h3 class="h3">Estudios y otros procesos</h3>
                     <div>
                         <input type="checkbox" id="AnalisisCalidad">
                         <label for="AnalisisCalidad">Análisis de calidad</label>
@@ -199,7 +221,7 @@
                         <label for="ModificacionArticulo">Modificación de artículo</label>
                     </div>
 
-                    <h3>Comentarios del diseño:</h3>
+                    <h3 class="h3">Comentarios del diseño:</h3>
                     <div>
                         <input type="text" id="ComentarioDiseno" class="ComentarioDiseno" value="Comentarios">
                     </div>
@@ -209,7 +231,7 @@
                     <h2>Datos para el comercial:</h2>
 
                     <div>
-                        <h3>Medias internas:</h3>
+                        <h3 class="h3">Medias internas:</h3>
                         <input type="number" id="largo" placeholder="Largo"> x
                         <input type="number" id="ancho" placeholder="Ancho"> x
                         <input type="number" id="alto" placeholder="Alto">
@@ -217,15 +239,15 @@
                         <label for="MediaCaja">Media caja</label>
                     </div>
                     <div>
-                        <h3>Medidas unitarias:</h3>
+                        <h3 class="h3">Medidas unitarias:</h3>
                         <input type="number" id="AnchoTotal" placeholder="Ancho plancha"> x 
                         <input type="number" id="LargoTotal" placeholder="Largo plancha">
-                        <h3>Poses:</h3>
+                        <h3 class="h3">Poses:</h3>
                         <input type="number" id="PosesAncho" value="1"> x 
                         <input type="number" id="PosesLargo" value="1">
                     </div>
                     <div>
-                        <h3>Ruta de fabricación:</h3><br>
+                        <h3 class="h3">Ruta de fabricación:</h3><br>
                         <select id="Pasada0">
                             <option value="OND">Onduladora</option>
                             <option value="DF">Dong Fang</option>
@@ -297,23 +319,23 @@
                         </select>
                     </div>
                     <div>
-                        <h3>Coste de subcontratación:</h3>
+                        <h3 class="h3">Coste de subcontratación:</h3>
                         <input type="number" id="CosteSubcontratacion" value="0"> €
                     </div>
                     <div>
-                        <h3>Tintas:</h3>
+                        <h3 class="h3">Tintas:</h3>
                         <h4>Nº de tintas: </h4>
                         <input type="number" id="NumeroTintas" value="0"> %
                         <h4>Porcentaje de impresión: </h4>
                         <input type="number" id="PorcentajeImpresion" value="0"> %
                     </div>
                     <div>
-                        <h3>Utillaje:</h3>
+                        <h3 class="h3">Utillaje:</h3>
                         <p>Coste del troquel: <input type="number" id="CosteTroquel" value="0"> €</p>
                         <p>Coste del cliché:   <input type="number" id="CosteCliche" value="0"> €</p>
                     </div>
                     <div>
-                        <h3>Comentarios comerciales:</h3>
+                        <h3 class="h3">Comentarios comerciales:</h3>
                         <input type="text" id="ComentarioComercial" class="ComentarioComercial" value="Comentarios">
                     </div>
                     <br>

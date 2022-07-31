@@ -1,4 +1,29 @@
+'use strict'
 
+const bloque    = document.querySelectorAll('.bloque')
+const h2        = document.querySelectorAll('.h3')
+
+
+// Cuando CLICK en h2,
+    // QUITAR la clase activo de TODOS los bloque
+    // Vamos a añadir la clase activo al BLOQUE con la POSICION del h2
+
+// Recorrer TODOS los h2
+h2.forEach( ( cadaH2 , i )=>{
+    // Asignando un CLICK a cada h2
+    h2[i].addEventListener('click', ()=>{
+
+        // Recorrer TODOS los bloque
+        bloque.forEach( ( cadaBloque , i )=>{
+            // Quitamos la clase activo de TODOS los bloques
+            bloque[i].classList.remove('activo')
+        })
+        // Añadiendo la clase activo al bloque cuya posición sea igual al del h2
+        // (Línea número 12)
+        bloque[i].classList.add('activo')
+
+    })
+}) 
 function fecha() {
     let hoy = new Date();
   
@@ -22,7 +47,7 @@ function crear() {
     const Amador = document.getElementById("Amador").checked;
     const Marco = document.getElementById("Marco").checked;
     const Fran = document.getElementById("Fran").checked;
-    const WebCenter = document.getElementById("WebCenter").value;
+    /* const WebCenter = document.getElementById("WebCenter").value; */
     
     //////////////////////////////////////////////////////////
     //Nombre
@@ -30,22 +55,22 @@ function crear() {
     
     let name;
     if (Manuel) {
-        name = "MP - " + formatofecha + " - " + WebCenter + `
+        name = "MP - " + formatofecha /* + " - " */ /* + WebCenter */ + `
 `; 
     } else if (Raquel){
-        name = "RM - " + formatofecha + " - " + WebCenter + `
+        name = "RM - " + formatofecha /* + " - " */ /* + WebCenter */ + `
 `; 
     } else if (Amador){
-        name = "AA - " + formatofecha + " - " + WebCenter + `
+        name = "AA - " + formatofecha /* + " - " */ /* + WebCenter */ + `
 `; 
     } else if (Marco){
-        name = "MM - " + formatofecha + " - " + WebCenter + `
+        name = "MM - " + formatofecha /* + " - " */ /* + WebCenter */ + `
 `; 
     } else if (Fran){
-        name = "FM - " + formatofecha + " - " + WebCenter + `
+        name = "FM - " + formatofecha /* + " - " */ /* + WebCenter */ + `
 `; 
     } else {
-        name = "OT - " + formatofecha + " - " + WebCenter + `
+        name = "OT - " + formatofecha /* + " - " */ /* + WebCenter */ + `
 `;
         alert("Se te ha olvidado identificarte. ¡Gracias por hacerlo ya!");
     }
