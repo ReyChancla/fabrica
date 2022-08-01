@@ -27,10 +27,9 @@
                         <label for="Marco">Marco</label>
                         <input type="radio" name="Nombre" id="Fran">
                         <label for="Fran">Francisco</label>
+                        <input type="text" name="WebCenter" class="webcenter" id="WebCenter" placeholder="Nº de Web Center">               
                     </div>
                 </div>
-              <!--   <input type="text" name="WebCenter" id="WebCenter" placeholder="Nº de Web Center">               
-                <br><br> -->
                 <div class="bloque">
                     <h3 class="h3">Diseño estructural:</h3>
                     <div class="contenido">
@@ -53,7 +52,7 @@
                     <div class="contenido">
                         <p>G-2022 -
                         <input type="number" name="DisenoGrafico" id="DisenoGrafico" placeholder="Nº del gráfico"> - 
-                        <input type="number" name="DisenoGrafico" id="DisenoGraficoVersion" placeholder="Versión">
+                        <input type="number" name="DisenoGrafico"  id="DisenoGraficoVersion" placeholder="Versión">
                         </p>
                         <div>
                             <div>
@@ -73,9 +72,9 @@
                                 <input type="radio" name="GraficoColor" id="ReferenciasActivas">
                                 <label for="ReferenciasActivas">Referencias activas</label>
                                 <input type="radio" name="GraficoColor" id="GCMI">
-                                <label for="GCMI">GCMI</label>
-                                <input type="radio" name="GraficoColor" id="Pantone">
-                                <label for="Pantone">Pantone</label>
+                                <label for="GCMI">GCMI/Pantone</label>
+                                <!-- <input type="radio" name="GraficoColor" id="Pantone">
+                                <label for="Pantone">Pantone</label> -->
                                 <input type="radio" name="GraficoColor" id="PropuestaInterna">
                                 <label for="PropuestaInterna">Propuesta interna</label>
                                 <input type="radio" name="GraficoColor" id="NadaColor">
@@ -224,15 +223,19 @@
                         <label for="EstudioOneA">Estudio OneA</label>
                         <input type="checkbox" id="ModificacionArticulo" onclick="articuloYa()">
                         <label for="ModificacionArticulo">Modificación de artículo</label>
+                        <input type="checkbox" id="CrearcionArticulo" onclick="articuloNo()">
+                        <label for="CrearcionArticulo">Creación de artículo</label>
+                        <span id="datosArticulo"></span>
                     </div>        
                 </div>
 
-                <div class="bloque">
+                <!-- <div class="bloque">
                     <h3 class="h3">Comentarios del diseño:</h3>
                     <div class="contenido">
                         <input type="text" id="ComentarioDiseno" class="ComentarioDiseno" value="Comentarios">
+                        <textarea name="textarea2" id="textareaDiseno" cols="100" rows="10"></textarea>
                     </div>  
-                </div>
+                </div> -->
                     <!-- *******************************************************************
                     *******************************************************************
                     ******************************************************************* -->
@@ -256,6 +259,9 @@
                             <h3>Poses:</h3>
                             <input type="number" id="PosesAncho" value="1"> x 
                             <input type="number" id="PosesLargo" value="1">
+                            <h3>Trim extra:</h3>
+                            <input type="number" id="TrimAncho" value="0"> x 
+                            <input type="number" id="TrimLargo" value="0">
                         </div>
                     </div>
                     <div class="bloque">
@@ -355,12 +361,12 @@
                             <p>Coste del cliché:   <input type="number" id="CosteCliche" value="0"> €</p>
                         </div>
                     </div>
-                    <div class="bloque">
+                   <!--  <div class="bloque">
                         <h3 class="h3">Comentarios comerciales:</h3>
                         <div class="contenido">
                             <input type="text" id="ComentarioComercial" class="ComentarioComercial" value="Comentarios">
                         </div>
-                    </div>
+                    </div> -->
                     <br>
 
 
@@ -369,6 +375,8 @@
                 <div id="textareaCopy">
                 </div>
             </div>
+            
+
             
         </div>
 

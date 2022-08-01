@@ -35,6 +35,7 @@ function fecha() {
     return { formatofecha, year };
 }
 
+
 function crear() {
 
     document.getElementById("textareaCopy").innerHTML = 
@@ -47,7 +48,7 @@ function crear() {
     const Amador = document.getElementById("Amador").checked;
     const Marco = document.getElementById("Marco").checked;
     const Fran = document.getElementById("Fran").checked;
-    /* const WebCenter = document.getElementById("WebCenter").value; */
+    const WebCenter = document.getElementById("WebCenter").value;
     
     //////////////////////////////////////////////////////////
     //Nombre
@@ -55,22 +56,22 @@ function crear() {
     
     let name;
     if (Manuel) {
-        name = "MP - " + formatofecha /* + " - " */ /* + WebCenter */ + `
+        name = "MP - " + formatofecha  + " - " + WebCenter + `
 `; 
     } else if (Raquel){
-        name = "RM - " + formatofecha /* + " - " */ /* + WebCenter */ + `
+        name = "RM - " + formatofecha  + " - " + WebCenter + `
 `; 
     } else if (Amador){
-        name = "AA - " + formatofecha /* + " - " */ /* + WebCenter */ + `
+        name = "AA - " + formatofecha  + " - " + WebCenter + `
 `; 
     } else if (Marco){
-        name = "MM - " + formatofecha /* + " - " */ /* + WebCenter */ + `
+        name = "MM - " + formatofecha  + " - " + WebCenter + `
 `; 
     } else if (Fran){
-        name = "FM - " + formatofecha /* + " - " */ /* + WebCenter */ + `
+        name = "FM - " + formatofecha  + " - " + WebCenter + `
 `; 
     } else {
-        name = "OT - " + formatofecha /* + " - " */ /* + WebCenter */ + `
+        name = "OT - " + formatofecha  + " - " + WebCenter + `
 `;
         alert("Se te ha olvidado identificarte. ¡Gracias por hacerlo ya!");
     }
@@ -105,9 +106,13 @@ Estructural = ``;
 const SegunMuestra = document.getElementById("SegunMuestra").checked;
 const ReferenciasActivas = document.getElementById("ReferenciasActivas").checked;
 const GCMI = document.getElementById("GCMI").checked;
-const Pantone = document.getElementById("Pantone").checked;
+/* const Pantone = document.getElementById("Pantone").checked */;
 const PropuestaInterna = document.getElementById("PropuestaInterna").checked;
+const MuestraGrafico = document.getElementById("MuestraGrafico").checked;
+const InfoGrafico = document.getElementById("InfoGrafico").checked;
 const NadaGrafico = document.getElementById("NadaGrafico").checked;
+const NadaColor= document.getElementById("NadaGrafico").checked;
+
 const DisenoGrafico = document.getElementById("DisenoGrafico").value;
 let DisenoGraficoVersion = document.getElementById("DisenoGraficoVersion").value;
 
@@ -117,24 +122,38 @@ if (DisenoGraficoVersion === ``) {
     DisenoGraficoVersion = "-" + document.getElementById("DisenoGraficoVersion").value;
 }
 
+let Grafico;
+
+if (MuestraGrafico) {
+    Grafico = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según muestra." + `
+`; 
+} else if (InfoGrafico){
+    Grafico = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según información." + `
+`; 
+} else if (NadaGrafico){
+    Grafico = ``; 
+} else {
+Grafico = ``;
+}
+
 let GraficoColor;
 
 if (SegunMuestra) {
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según muestra." + `
+    GraficoColor = `Color/es igual a muestra
 `; 
 } else if (ReferenciasActivas){
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según referencias activas." + `
+    GraficoColor = `Color/es igual a referencias activas.
 `; 
 } else if (GCMI){
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según GCMI." + `
-`; 
-} else if (Pantone){
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según Pantone del cliente." + `
-`; 
+    GraficoColor = `Color/es igual a GCMI/Pantone .
+`;
+/* } else if (Pantone){
+    GraficoColor =  `Color/es igual a Pantone.
+`;  */
 } else if (PropuestaInterna){
-    GraficoColor = "Gráfico " + "G-2022-" + DisenoGrafico + DisenoGraficoVersion + " según propuesta interna." + `
+    GraficoColor =  `Color/es igual propuesta interna.
 `; 
-}else if (NadaGrafico){
+}else if (NadaColor){
     GraficoColor = ``; 
 } else {
 GraficoColor = ``;
@@ -180,7 +199,7 @@ if (PruebaColor) {
     MuestrasColor = "Se envía una muestra de color tramado impreso." + `
 `;  
 } else if (PruebaPegada){
-    MuestrasColor = "Se manda prototipo impreso y tramado, sobre la caja." + `
+    MuestrasColor = "Se envía prueba de color pegada a caja." + `
 `; 
 }else if (SinMuestraColor){
     MuestrasColor = ``; 
@@ -241,8 +260,8 @@ MuestrasColor = ``;
 //Comenatarios
 //////////////////////////////////////////////////////////
 
-const ComentarioDiseno = document.getElementById('ComentarioDiseno').value;
-
+/* const ComentarioDiseno = document.getElementById('ComentarioDiseno');
+console.log(ComentarioDiseno);
 let ComentarioDiseno2;
 
 if (ComentarioDiseno === "Comentarios") {
@@ -250,7 +269,7 @@ if (ComentarioDiseno === "Comentarios") {
 } else {
     ComentarioDiseno2 = ComentarioDiseno + "." + `
 `;
-}
+} */
 
 //////////////////////////////////////////////////////////
 //Datos comerciales
@@ -278,6 +297,9 @@ const LargoTotal = document.getElementById('LargoTotal').value;
 
 const PosesAncho = document.getElementById('PosesAncho').value;
 const PosesLargo = document.getElementById('PosesLargo').value;
+
+const TrimAncho = Number(document.getElementById('TrimAncho').value);
+const TrimLargo = Number(document.getElementById('TrimLargo').value);
 
 let Pasada0 = document.getElementById('Pasada0').value;
 let Pasada1 = document.getElementById('Pasada1').value;
@@ -355,22 +377,22 @@ if (Pasada6 === "Nada") {
 let MedidasUnitarias;
 
 if (AnchoTotal > 0 && LargoTotal > 0 && Pasada1 === "Martin") {
-    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
-    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
+    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA + TrimAncho;
+    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL + TrimLargo;
     const MultiplicaPoses = PosesAncho * PosesLargo;
     MedidasUnitarias = `Medidas Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
 Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.
-Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.`;
+Ruta: ${Pasada0}/${Pasada1}/${Pasada2}/${Pasada3}/${Pasada4}/${Pasada5}/${Pasada6}.`;
 } else if (AnchoTotal > 0 && LargoTotal > 0 && Pasada1 === "Curioni") {
-    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
-    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
+    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA + TrimAncho;
+    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL + TrimLargo;
     const MultiplicaPoses = PosesAncho * PosesLargo;
     MedidasUnitarias = `Medidas Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
 Medidas de plancha: ${MTotalAncho} x ${MTotalLargo} mm.
-Ruta: OND/${Pasada1}/${Pasada2}/${Pasada3}.`;
+Ruta: ${Pasada0}/${Pasada1}/${Pasada2}/${Pasada3}/${Pasada4}/${Pasada5}/${Pasada6}.`;
 } else if (AnchoTotal > 0 && LargoTotal > 0) {
-    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA;
-    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL;
+    const MTotalAncho = (AnchoTotal * PosesAncho) + MargenA + TrimAncho;
+    const MTotalLargo = (LargoTotal * PosesLargo) + MargenL + TrimLargo;
     const MultiplicaPoses = PosesAncho * PosesLargo;
     MedidasUnitarias = `Medidas Unitarias: ${AnchoTotal} x ${LargoTotal} mm.
 Nº de poses: ${MultiplicaPoses} (${PosesAncho} x ${PosesLargo}).
@@ -424,7 +446,7 @@ if (CosteCliche > 0) {
 } else {
     CosteCliche = ``;
 }
-const ComentarioComercial = document.getElementById('ComentarioComercial').value;
+/* const ComentarioComercial = document.getElementById('ComentarioComercial').value;
 
 let ComentarioComerciales2;
 
@@ -433,20 +455,20 @@ if (ComentarioComercial === "Comentarios") {
 } else {
     ComentarioComerciales2 = ComentarioComercial + "." + `
 `;
-}
+} */
 
 //////////////////////////////////////////////////////////
 //Cadena de texto
 //////////////////////////////////////////////////////////
     document.getElementById("contenedor").innerHTML = 
-    `${name}${Estructural}${GraficoColor}${MuestrasEnviadasCortadas2}`+
+    `${name}${Estructural}${Grafico}${GraficoColor}${MuestrasEnviadasCortadas2}`+
     `${MuestrasColor}${AnalisisCalidad2}`+
     `${PresupuestosSubcontratacion2}${EstudioCape2}`+
-    `${EstudioOneA2}${ModificacionArticulo2}${ComentarioDiseno2}`+
+    `${EstudioOneA2}${ModificacionArticulo2}`+
 
     MedidasInternas + MedidasUnitarias + `
     ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
-    `${CosteTroquel}${CosteCliche}${ComentarioComerciales2}
+    `${CosteTroquel}${CosteCliche}
 **************************************************`;
 
 
@@ -467,4 +489,12 @@ function articuloYa() {
     if (activoarticulo) {
         alert(`Gracias por poner el articulo en Docupoint ¡Ya!, antes de seguir.`);
     } 
+}
+
+function articuloNo() {
+    document.getElementById("datosArticulo").innerHTML = 
+    `<br>
+    <p>Número de articulo: <input type="number"  id="numeroArticulo">   
+Descripción: <input type="text"  id="descricionArticulo"></p>
+    `
 }
