@@ -433,7 +433,7 @@ if (PorcentajeImpresion > 0) {
 
 let CosteTroquel = document.getElementById('CosteTroquel').value;
 if (CosteTroquel > 0) {
-    CosteTroquel = `Costes de troquel: ${CosteTroquel}€.
+    CosteTroquel = `Costes de troquel: ${CosteTroquel}€ aprox.
 `;
 } else {
     CosteTroquel = ``;
@@ -441,7 +441,7 @@ if (CosteTroquel > 0) {
 
 let CosteCliche = document.getElementById('CosteCliche').value;
 if (CosteCliche > 0) {
-    CosteCliche = `Costes de cliché: ${CosteCliche}€.
+    CosteCliche = `Costes de cliché: ${CosteCliche}€ aprox.
 `;
 } else {
     CosteCliche = ``;
