@@ -55,6 +55,7 @@ function crear() {
     //////////////////////////////////////////////////////////
     
     let name;
+    let nameError
     if (Manuel) {
         name = "MP - " + formatofecha  + " - " + WebCenter + `
 `; 
@@ -73,7 +74,8 @@ function crear() {
     } else {
         name = "OT - " + formatofecha  + " - " + WebCenter + `
 `;
-        alert("Se te ha olvidado identificarte. ¡Gracias por hacerlo ya!");
+        /* alert("Se te ha olvidado identificarte. ¡Gracias por hacerlo ya!"); */
+        nameError = "OT"
     }
     //////////////////////////////////////////////////////////
     //Estructural
@@ -168,13 +170,25 @@ const canalesmuestra = document.getElementById("canalesmuestra").value;
 const NumeroMuestrasCortadas = document.getElementById("NumeroMuestrasCortadas").value;
 
 let MuestrasEnviadasCortadas2;
+let MuestrasPlural;
+
+if (NumeroMuestrasCortadas > 1) {
+    MuestrasPlural = " muestras en: ";
+} else {
+    MuestrasPlural = " muestra en: ";
+}
+if (NumeroMuestrasCortadas > 1000){
+    MuestrasPlural = " muestras en: ";
+    alert("Te has emocionado, relaja la raja y piensa si estas seguro en cortar tantas muestras." )
+    window.open("mailto:Pedro.Chacon@dssmith.com")
+    }   
 
 if (MuestrasCortadas) {
-    MuestrasEnviadasCortadas2 = "Se cortan " + NumeroMuestrasCortadas + " muestras, en calidad" +
+    MuestrasEnviadasCortadas2 = "Se cortan " + NumeroMuestrasCortadas + MuestrasPlural +
     canalesmuestra + "." + `
 `; 
 } else if (MuestrasEnviadasCortadas){
-    MuestrasEnviadasCortadas2 = "Se cortan y envían " + NumeroMuestrasCortadas + " muestras, en calidad: " +
+    MuestrasEnviadasCortadas2 = "Se cortan y envían " + NumeroMuestrasCortadas + MuestrasPlural +
     canalesmuestra + "." + `
 `;  
 }else if (SinMuestrasCortadas){
@@ -465,13 +479,23 @@ if (ComentarioComercial === "Comentarios") {
     `${MuestrasColor}${AnalisisCalidad2}`+
     `${PresupuestosSubcontratacion2}${EstudioCape2}`+
     `${EstudioOneA2}${ModificacionArticulo2}`+
-
     MedidasInternas + MedidasUnitarias + `
     ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
     `${CosteTroquel}${CosteCliche}
 **************************************************`;
 
-
+/* window.open(
+    `mailto:Rosa.Munoz@dssmith.com&
+    CC=Amador.Alonso@dssmith.com, Fernando.Gomez@dssmith.com, Marco.Antonio.Mata@dssmith.com, Francisco.Millan@dssmith.com, Raquel.Montero@dssmith.com
+    &body=soy la caña`
+) */
+if (nameError === "OT") {
+    document.getElementById("textareaCopy").innerHTML =
+    `<div class="Error activo">`+
+     `<h3>Indica quien eres.</h3>`+
+     `<img src="img/200.webp" alt="Este es un mensaje para que pongas tu nombre.">`+
+     `</div>`
+}
 
 }
 

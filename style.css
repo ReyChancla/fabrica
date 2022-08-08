@@ -314,3 +314,12 @@ footer p{
 .webcenter{
   width: 200px;
 }
+
+input[type="button"] {
+  width: 100px;
+  height: 50px;
+  background: #f7b733;
+  border-color: #f7b733;
+  border-radius: 10px;
+}
+
