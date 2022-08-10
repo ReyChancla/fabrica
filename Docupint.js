@@ -322,7 +322,7 @@ let Pasada3 = document.getElementById('Pasada3').value;
 let Pasada4 = document.getElementById('Pasada4').value;
 let Pasada5 = document.getElementById('Pasada5').value;
 let Pasada6 = document.getElementById('Pasada6').value;
-
+const entradaContraCanal = document.getElementById("entradaContraCanal").checked;
 console.log(Pasada1);
 
 let MargenA;
@@ -351,6 +351,11 @@ if (Pasada1 === "DF") {
     MargenA = 0;
     MargenL = 0;
 };
+
+if (Pasada1 === "Bobst" && entradaContraCanal) {
+    MargenA = 20;
+    MargenL = 25;
+}
 
 if (Pasada1 === "Nada") {
     Pasada1 = ``;
