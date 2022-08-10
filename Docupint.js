@@ -486,6 +486,8 @@ if (CrearcionArticulo) {
     
     DatosArticulo = `Se crea artículo: ` + numeroArticulo + " " + descricionArticulo + `
     `;
+} else {
+    DatosArticulo = ``;
 }
 
 
