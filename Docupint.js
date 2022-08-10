@@ -84,11 +84,11 @@ function crear() {
     const InfoEstructural = document.getElementById("InfoEstructural").checked;
     const Docupoint = document.getElementById("Docupoint").value;
     let DocupointVersion = document.getElementById("DocupointVersion").value;
-    
-    if (DocupointVersion > 0) {
-        DocupointVersion = "_" + document.getElementById("DocupointVersion").value;
-    } else {
+    console.log(DocupointVersion);
+    if (DocupointVersion == "") {
         DocupointVersion = ``;
+    } else {
+        DocupointVersion = "_" + document.getElementById("DocupointVersion").value;
     }
 let Estructural;
 if (MuestraEstructural) {
@@ -471,42 +471,56 @@ if (ComentarioComercial === "Comentarios") {
 `;
 } */
 
+const CrearcionArticulo = document.getElementById("CrearcionArticulo").checked;
+
+let DatosArticulo;
+
+if (CrearcionArticulo) {
+    const numeroArticulo = document.getElementById("numeroArticulo").value;
+    const descricionArticulo = document.getElementById("descricionArticulo").value;
+    
+    DatosArticulo = `Se crea artículo: ` + numeroArticulo + " " + descricionArticulo + `
+    `;
+}
+
+
+
 //////////////////////////////////////////////////////////
 //Cadena de texto
 //////////////////////////////////////////////////////////
-    document.getElementById("contenedor").innerHTML = 
-    `${name}${Estructural}${Grafico}${GraficoColor}${MuestrasEnviadasCortadas2}`+
+document.getElementById("contenedor").innerHTML = 
+`${name}${Estructural}${Grafico}${GraficoColor}${MuestrasEnviadasCortadas2}`+
     `${MuestrasColor}${AnalisisCalidad2}`+
     `${PresupuestosSubcontratacion2}${EstudioCape2}`+
-    `${EstudioOneA2}${ModificacionArticulo2}`+
+    `${EstudioOneA2}${ModificacionArticulo2}${DatosArticulo}` +
     MedidasInternas + MedidasUnitarias + `
     ${CosteSubcontratacion}${NumeroTintas}${PorcentajeImpresion}`+
     `${CosteTroquel}${CosteCliche}
-**************************************************`;
-
-/* window.open(
-    `mailto:Rosa.Munoz@dssmith.com&
-    CC=Amador.Alonso@dssmith.com, Fernando.Gomez@dssmith.com, Marco.Antonio.Mata@dssmith.com, Francisco.Millan@dssmith.com, Raquel.Montero@dssmith.com
-    &body=soy la caña`
-) */
+    **************************************************`;
+    
+    /* window.open(
+        `mailto:Rosa.Munoz@dssmith.com&
+        CC=Amador.Alonso@dssmith.com, Fernando.Gomez@dssmith.com, Marco.Antonio.Mata@dssmith.com, Francisco.Millan@dssmith.com, Raquel.Montero@dssmith.com
+        &body=soy la caña`
+        ) */
 if (nameError === "OT") {
     document.getElementById("textareaCopy").innerHTML =
     `<div class="Error activo">`+
-     `<h3>Indica quien eres.</h3>`+
-     `<img src="img/200.webp" alt="Este es un mensaje para que pongas tu nombre.">`+
+    `<h3>Indica quien eres.</h3>`+
+    `<img src="img/200.webp" alt="Este es un mensaje para que pongas tu nombre.">`+
      `</div>`
-}
-
+    }
+    
 }
 
 
 function copiar() {
-
+    
     var content = document.getElementById('contenedor');
     
     content.select();
     document.execCommand('Copy');
-
+    
 }
 function articuloYa() {
     const activoarticulo = document.getElementById("ModificacionArticulo").checked;
@@ -516,9 +530,10 @@ function articuloYa() {
 }
 
 function articuloNo() {
+    alert(`Gracias por poner el articulo en Docupoint ¡Ya!, antes de seguir.`);
     document.getElementById("datosArticulo").innerHTML = 
     `<br>
     <p>Número de articulo: <input type="number"  id="numeroArticulo">   
-Descripción: <input type="text"  id="descricionArticulo"></p>
+    Descripción: <input type="text"  id="descricionArticulo"></p>
     `
 }
