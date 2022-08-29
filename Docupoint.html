@@ -14,23 +14,30 @@
         <h1>Docupoint</h1>
         <div class ="wrap">
             <div class ="gris">
-                <div class="bloque activo">
-                    <h3 class="h3">Nombre del técnico</h3>
+                <div class="bloque ">
+                    <h3 class="h3" id="saludo">Nombre del técnico</h3>
                     <div class="contenido">
-                        <input type="radio" name="Nombre" id="Manuel">
-                        <label for="Manuel">Manuel</label>
-                        <input type="radio" name="Nombre" id="Raquel">
-                        <label for="Raquel">Raquel</label>
-                        <input type="radio" name="Nombre" id="Amador">
-                        <label for="Amador">Amador</label>
-                        <input type="radio" name="Nombre" id="Marco">
-                        <label for="Marco">Marco</label>
-                        <input type="radio" name="Nombre" id="Fran">
-                        <label for="Fran">Francisco</label>
-                        <input type="text" name="WebCenter" class="webcenter" id="WebCenter" placeholder="Nº de Web Center">               
+                        <br>
+                        <input type="button"  value="Manuel" id="manuel" onclick="nombre('Manuel')">
+                        <input type="button" value="Amador" id="amador" onclick="nombre('Amador')">
+                        <input type="button" value="Raquel" id="raquel" onclick="nombre('Raquel')">
+                        <input type="button" value="Marco" id="marco" onclick="nombre('Marco')">
+                        <input type="button" value="Francisco" id="francisco" onclick="nombre('Francisco')">
+                        <!-- <input type="radio" name="Nombre" id="Manuel">
+                            <label for="Manuel">Manuel</label>
+                            <input type="radio" name="Nombre" id="Raquel">
+                            <label for="Raquel">Raquel</label>
+                            <input type="radio" name="Nombre" id="Amador">
+                            <label for="Amador">Amador</label>
+                            <input type="radio" name="Nombre" id="Marco">
+                            <label for="Marco">Marco</label>
+                            <input type="radio" name="Nombre" id="Fran">
+                            <label for="Fran">Francisco</label> --> <br>
+                            <br>
+                            <input type="text" name="WebCenter" class="webcenter" id="WebCenter" placeholder="Nº de Web Center">               
                     </div>
                 </div>
-                <div class="bloque">
+                <div class="bloque activo">
                     <h3 class="h3">Diseño estructural:</h3>
                     <div class="contenido">
                         <p>DSS-LUCENA- 

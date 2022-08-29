@@ -35,46 +35,81 @@ function fecha() {
     return { formatofecha, year };
 }
 
+function nombre(NOMBRE) {
+    document.querySelector('#saludo').innerHTML = `Buenas, ${NOMBRE}`;
+    console.log(NOMBRE);
+    localStorage.setItem('personas',JSON.stringify(NOMBRE))
+    
+}
 
+let data = localStorage.getItem('personas')
+console.log(data);
+let sigla;
+if (data == 'undefined') {
+    sigla = 'OT'
+    document.querySelector('#saludo').innerHTML = `Buenas, ${data}`;
+} else if (data == '"Manuel"') {
+    data = 'Manuel';
+    sigla = 'MP'
+    document.querySelector('#saludo').innerHTML = `Buenas, ${data}`;
+} else if (data == '"Amador"') {
+    data = 'Amador';
+    sigla = 'AA'
+    document.querySelector('#saludo').innerHTML = `Buenas, ${data}`;
+} else if (data == '"Raquel"') {
+    data = 'Raquel';
+    sigla = 'RM'
+    document.querySelector('#saludo').innerHTML = `Buenas, ${data}`;
+} else if (data == '"Marco"') {
+    data = 'Marco';
+    sigla = 'MM'
+    document.querySelector('#saludo').innerHTML = `Buenas, ${data}`;
+} else if (data == '"Francisco"') {
+    data = 'Francisco';
+    sigla = 'FM'
+    document.querySelector('#saludo').innerHTML = `Buenas, ${data}`;
+}
 function crear() {
 
+    let data = localStorage.getItem('personas')
     document.getElementById("textareaCopy").innerHTML = 
     `<textarea id="contenedor" class="textarea"></textarea><br>
     <input type="button" value="Copy" onclick="copiar()">`;
 
     const { formatofecha, year } = fecha();
-    const Manuel = document.getElementById("Manuel").checked;
+/*     const Manuel = document.getElementById("Manuel").checked;
     const Raquel = document.getElementById("Raquel").checked;
     const Amador = document.getElementById("Amador").checked;
     const Marco = document.getElementById("Marco").checked;
     const Fran = document.getElementById("Fran").checked;
-    const WebCenter = document.getElementById("WebCenter").value;
+ */    const WebCenter = document.getElementById("WebCenter").value;
     
     //////////////////////////////////////////////////////////
     //Nombre
     //////////////////////////////////////////////////////////
+  
     
     let name;
     let nameError
-    if (Manuel) {
+    if (data == '"Manuel"') {
         name = "MP - " + formatofecha  + " - " + WebCenter + `
 `; 
-    } else if (Raquel){
+    } else if (data == '"Raquel"'){
         name = "RM - " + formatofecha  + " - " + WebCenter + `
 `; 
-    } else if (Amador){
+    } else if (data == '"Amador"'){
         name = "AA - " + formatofecha  + " - " + WebCenter + `
 `; 
-    } else if (Marco){
+    } else if (data == '"Marco"'){
         name = "MM - " + formatofecha  + " - " + WebCenter + `
 `; 
-    } else if (Fran){
+    } else if (data == '"Francisco"'){
         name = "FM - " + formatofecha  + " - " + WebCenter + `
 `; 
     } else {
         name = "OT - " + formatofecha  + " - " + WebCenter + `
 `;
-        /* alert("Se te ha olvidado identificarte. ¡Gracias por hacerlo ya!"); */
+        alert("Se te ha olvidado identificarte. ¡Gracias por hacerlo ya!"); 
         nameError = "OT"
     }
     //////////////////////////////////////////////////////////
